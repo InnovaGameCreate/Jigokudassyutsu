@@ -2,10 +2,12 @@
 #include "define.h"
 #include "fps.h"
 #include "scene_mgr.h"
+#include "input.h"
 
 //ゲーム起動時に行う初期化
 namespace {
 	void FirstInit() {
+		//コンソール表示
 #ifdef _DEBUG
 #pragma warning( disable : 4996 ) // freopen の警告を出力しない
 		::AllocConsole();               // コマンドプロンプトが表示される
@@ -14,11 +16,15 @@ namespace {
 		freopen("CON", "w", stderr);    // 標準エラー出力の割り当て
 #endif // _DEBUG
 
+		//DXライブラリ関係初期化
 		ChangeWindowMode(TRUE);//ウィンドウモード
 		SetGraphMode(kWindowWidth, kWindowHeight, 16);//ウィンドウの大きさ変更
 		SetMainWindowText("地獄脱出");
 		DxLib_Init();//DXライブラリ初期化
 		SetDrawScreen(DX_SCREEN_BACK);//裏画面化
+
+		//util関係初期化
+		input::Init();
 	}
 }
 
@@ -28,13 +34,14 @@ namespace {
 		if (ScreenFlip() != 0)return -1;//裏画面描画
 		if (ProcessMessage() != 0)return -1;//プロセス処理
 		if (ClearDrawScreen() != 0)return -1;//画面クリア処理
+		input::Update();//入力更新
 		return 0;
 	}
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-	
 	SceneMgr scene_mgr;
+	Fps fps(60);
 
 	//初期化
 	FirstInit();
@@ -42,8 +49,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	//メインループ
 	while (ProcessLoop() == 0) {
+		//更新
+		fps.Update();
 		scene_mgr.Update();
+		//描画
 		scene_mgr.Draw();
+		fps.Draw(10,10);
+		//待機
+		fps.Wait();
 	}
 
 	//終了処理

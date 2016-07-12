@@ -5,6 +5,8 @@
 #include "base_scene.h"
 #include "i_scene_changer.h"
 
+#include "input.h"
+
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class GameScene : public BaseScene {
 public:

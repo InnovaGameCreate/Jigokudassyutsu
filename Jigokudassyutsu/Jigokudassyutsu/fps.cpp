@@ -90,6 +90,6 @@ double Fps::ComputeAverageTimepar()  const {
 //ˆø”:•¶š‚ğ•`‰æ‚·‚é¶ã‚ÌÀ•W
 void Fps::Draw(int X, int Y)  const {
 	//FPS•`‰æ
-	SetFontSize(20);
-	DrawFormatString(X, Y, GetColor(255, 255, 255), "FPS(D):%.2f %.2fms(%.2f%%)", fps_avg_, waittime_avg_, ComputeAverageTimepar());
+	SetFontSize(10);
+	DrawFormatString(X, Y, GetColor(255, 255, 255), "FPS:%.2f %.2fms(%.2f%%)", fps_avg_, waittime_avg_, ComputeAverageTimepar());
 }

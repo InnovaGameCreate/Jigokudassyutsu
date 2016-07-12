@@ -159,6 +159,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="fps.cpp" />
+    <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="game_scene.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="base_scene.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="fps.h" />
+    <ClInclude Include="input.h" />
     <ClInclude Include="i_scene_changer.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="game_scene.h" />
