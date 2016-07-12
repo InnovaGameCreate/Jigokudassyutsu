@@ -6,6 +6,7 @@
 #include "base_scene.h"
 
 #include "start_scene.h"
+#include "stage_select_scene.h"
 #include "game_scene.h"
 
 class SceneMgr : public ISceneChanger, Task {

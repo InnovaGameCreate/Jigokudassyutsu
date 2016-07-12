@@ -18,27 +18,33 @@ void SceneMgr::Finalize() {
 
 //更新
 void SceneMgr::Update() {
-	if (next_scene_ != kSceneNone) {    //次のシーンがセットされていたら
-		scene_->Finalize();//現在のシーンの終了処理を実行
+	if (next_scene_ != kSceneNone) {//次のシーンがセットされていたら
+		scene_->Finalize();			//現在のシーンの終了処理を実行
 		delete scene_;
-		switch (next_scene_) {       //シーンによって処理を分岐
-		case kSceneStart:        //次の画面がメニューなら
-			scene_ = (BaseScene*) new StartScene(this);   //メニュー画面のインスタンスを生成する
+		switch (next_scene_) {		//シーンによって処理を分岐
+		case kSceneStart:			//次の画面がメニューなら
+			scene_ = (BaseScene*) new StartScene(this);   //スタート画面のインスタンスを生成する
 			break;//以下略
+		case kSceneStageSelect:
+			scene_ = (BaseScene*)new StageSelectScene(this);
+			break;
 		case kSceneGame:
 			scene_ = (BaseScene*) new GameScene(this);
 			break;
+		default:
+			util::ErrorOutPut(__FILE__, __func__, __LINE__, "不明なシーンです、スタート画面に移行します");
+			scene_ = (BaseScene*) new StartScene(this);   //スタート画面のインスタンスを生成する
 		}
-		next_scene_ = kSceneNone;    //次のシーン情報をクリア
-		scene_->Initialize();    //シーンを初期化
+		next_scene_ = kSceneNone;   //次のシーン情報をクリア
+		scene_->Initialize();		//シーンを初期化
 	}
 
-	scene_->Update(); //シーンの更新
+	scene_->Update();	//シーンの更新
 }
 
 //描画
 void SceneMgr::Draw() {
-	scene_->Draw(); //シーンの描画
+	scene_->Draw();		//シーンの描画
 }
 
 // 引数 nextScene にシーンを変更する

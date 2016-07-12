@@ -47,6 +47,9 @@
     <ClCompile Include="input.cpp">
       <Filter>ソース ファイル\util</Filter>
     </ClCompile>
+    <ClCompile Include="stage_select_scene.cpp">
+      <Filter>ソース ファイル\scene_sub</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
@@ -81,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="input.h">
       <Filter>ソース ファイル\util</Filter>
+    </ClInclude>
+    <ClInclude Include="stage_select_scene.h">
+      <Filter>ソース ファイル\scene_sub</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

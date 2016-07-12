@@ -3,6 +3,7 @@
 
 typedef enum {
 	kSceneStart,    //メニュー画面
+	kSceneStageSelect,	//ステージ選択画面
 	kSceneGame,    //ゲーム画面
 
 	kSceneNone,    //無し
