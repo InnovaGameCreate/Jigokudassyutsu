@@ -15,6 +15,12 @@
     <Filter Include="ソース ファイル\util">
       <UniqueIdentifier>{107b7431-619a-472e-a069-1fcc6e12eca0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\scene">
+      <UniqueIdentifier>{bf5142aa-d926-423c-8ce7-201b12ecf896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\scene_sub">
+      <UniqueIdentifier>{dfa719e7-9aae-48d9-90e0-4cfc8f53e3fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -29,6 +35,15 @@
     <ClCompile Include="fps.cpp">
       <Filter>ソース ファイル\util</Filter>
     </ClCompile>
+    <ClCompile Include="scene_mgr.cpp">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="game_scene.cpp">
+      <Filter>ソース ファイル\scene_sub</Filter>
+    </ClCompile>
+    <ClCompile Include="start_scene.cpp">
+      <Filter>ソース ファイル\scene_sub</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
@@ -42,6 +57,24 @@
     </ClInclude>
     <ClInclude Include="define.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="task.h">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="i_scene_changer.h">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="base_scene.h">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_mgr.h">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="game_scene.h">
+      <Filter>ソース ファイル\scene_sub</Filter>
+    </ClInclude>
+    <ClInclude Include="start_scene.h">
+      <Filter>ソース ファイル\scene_sub</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

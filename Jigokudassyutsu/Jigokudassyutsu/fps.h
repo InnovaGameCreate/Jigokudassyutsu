@@ -6,16 +6,16 @@
 
 class Fps {
 private:
-	int default_fps;			//設定したFPS
+	int default_fps_;			//設定したFPS
 
-	unsigned int starttime;		//測定開始時刻
-	unsigned int count;			//カウンタ
-	int sampleing_count;		//平均を取るサンプル数
-	int waittime_sum;			//待機時間のサンプリングフレーム間での合計
+	unsigned int starttime_;		//測定開始時刻
+	unsigned int count_;			//カウンタ
+	int sampleing_count_;		//平均を取るサンプル数
+	int waittime_sum_;			//待機時間のサンプリングフレーム間での合計
 
-	double waittime_avg;		//待機時間の平均
-	double fps_avg;				//平均fps
-	unsigned int totai_count;	//経過フレームのカウント
+	double waittime_avg_;		//待機時間の平均
+	double fps_avg_;				//平均fps
+	unsigned int totai_count_;	//経過フレームのカウント
 
 	void Initialize();
 	double ComputeAverageTimepar() const;
