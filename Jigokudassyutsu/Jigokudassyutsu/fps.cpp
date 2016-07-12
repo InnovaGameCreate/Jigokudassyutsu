@@ -88,8 +88,8 @@ double Fps::ComputeAverageTimepar()  const {
 //•¶š‚Ì‘å‚«‚³‚Ì‚İ20‚ÅŒÅ’è‚µ‚Ä‚ ‚è‚Ü‚·
 //
 //ˆø”:•¶š‚ğ•`‰æ‚·‚é¶ã‚ÌÀ•W
-void Fps::Draw(int X, int Y)  const {
+void Fps::Draw(int x0, int y0)  const {
 	//FPS•`‰æ
 	SetFontSize(10);
-	DrawFormatString(X, Y, GetColor(255, 255, 255), "FPS:%.2f %.2fms(%.2f%%)", fps_avg_, waittime_avg_, ComputeAverageTimepar());
+	DrawFormatString(x0, y0, GetColor(255, 255, 255), "FPS:%.2f %.2fms(%.2f%%)", fps_avg_, waittime_avg_, ComputeAverageTimepar());
 }
