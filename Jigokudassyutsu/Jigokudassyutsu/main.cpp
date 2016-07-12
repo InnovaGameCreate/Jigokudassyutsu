@@ -40,23 +40,23 @@ namespace {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-	SceneMgr scene_mgr;
-	Fps fps(60);
+	FirstInit();		//ゲーム起動時に必要な初期化
+	
+	SceneMgr scene_mgr;	//画面遷移クラス生成
+	Fps fps(60);		//fps管理クラス作成(fps=60)
 
 	//初期化
-	FirstInit();
 	scene_mgr.Initialize();
 
 	//メインループ
 	while (ProcessLoop() == 0) {
-		//更新
-		fps.Update();
+		//画面遷移更新,描画
 		scene_mgr.Update();
-		//描画
 		scene_mgr.Draw();
-		fps.Draw(10,10);
-		//待機
+		//fps
+		fps.Update();
 		fps.Wait();
+		fps.Draw(10,10);
 	}
 
 	//終了処理

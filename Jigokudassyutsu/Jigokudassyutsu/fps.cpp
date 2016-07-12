@@ -8,7 +8,7 @@ Fps::Fps() {
 
 Fps::Fps(int fps) {
 	if (fps > 0 || fps < 200) {
-		util::ErrorOutPut(__FILE__, __func__, __LINE__, "fpsの値が不正です");
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "fpsの値が不正です,fps=60に設定しました");
 		sampleing_count_ = 60;
 		default_fps_ = 60;
 	}
