@@ -42,6 +42,6 @@ void SceneMgr::Draw() {
 }
 
 // 引数 nextScene にシーンを変更する
-void SceneMgr::ChangeScene(eScene NextScene) {
+void SceneMgr::ChangeScene(Scene NextScene) {
 	next_scene_ = NextScene;    //次のシーンをセットする
 }

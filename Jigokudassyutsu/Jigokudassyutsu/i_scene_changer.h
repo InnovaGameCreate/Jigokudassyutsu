@@ -6,13 +6,13 @@ typedef enum {
 	kSceneGame,    //ゲーム画面
 
 	kSceneNone,    //無し
-} eScene;
+} Scene;
 
 //シーンを変更するためのインターフェイスクラス
 class ISceneChanger {
 public:
 	virtual ~ISceneChanger() {}
-	virtual void ChangeScene(eScene NextScene) = 0;//指定シーンに変更する
+	virtual void ChangeScene(Scene NextScene) = 0;//指定シーンに変更する
 };
 
 #endif

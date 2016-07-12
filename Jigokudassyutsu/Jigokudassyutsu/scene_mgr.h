@@ -11,7 +11,7 @@
 class SceneMgr : public ISceneChanger, Task {
 private:
 	BaseScene* scene_;    //シーン管理変数
-	eScene next_scene_;    //次のシーン管理変数
+	Scene next_scene_;    //次のシーン管理変数
 
 public:
 	SceneMgr();
@@ -21,7 +21,7 @@ public:
 	void Draw() override;//描画
 
 	// 引数 nextScene にシーンを変更する
-	void ChangeScene(eScene NextScene) override;
+	void ChangeScene(Scene NextScene) override;
 };
 
 #endif
