@@ -6,13 +6,16 @@
 #include "i_scene_changer.h"
 
 #include "input.h"
+#include "map.h"
 
 //ゲーム画面クラス
 class GameScene : public BaseScene {
 private:
-	int stage_num_;
+	const int stage_num_;
+	Map map;
 public:
-	GameScene::GameScene(ISceneChanger* changer,int stage_num);
+	GameScene(ISceneChanger* changer,int stage_num);
+	~GameScene();
 	void Initialize() override;    //初期化処理をオーバーライド。
 	void Finalize() override;        //終了処理をオーバーライド。
 	void Update() override;        //更新処理をオーバーライド。

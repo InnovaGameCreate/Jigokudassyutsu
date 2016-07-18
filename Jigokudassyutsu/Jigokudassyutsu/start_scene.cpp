@@ -1,6 +1,11 @@
 #include "start_scene.h"
 
+//コンストラクタ
 StartScene::StartScene(ISceneChanger* changer) : BaseScene(changer) {
+}
+
+//デストラクタ
+StartScene::~StartScene() {
 }
 
 //初期化

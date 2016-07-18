@@ -10,7 +10,8 @@
 //ゲーム画面クラス
 class StartScene : public BaseScene {
 public:
-	StartScene::StartScene(ISceneChanger* changer);
+	StartScene(ISceneChanger* changer);
+	~StartScene();
 	void Initialize() override;    //初期化処理をオーバーライド。
 	void Finalize() override;        //終了処理をオーバーライド。
 	void Update() override;        //更新処理をオーバーライド。

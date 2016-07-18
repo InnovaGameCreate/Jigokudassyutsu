@@ -1,6 +1,11 @@
 #include "stage_select_scene.h"
 
+//コンストラクタ
 StageSelectScene::StageSelectScene(ISceneChanger* changer) : BaseScene(changer) {
+}
+
+//デストラクタ
+StageSelectScene::~StageSelectScene() {
 }
 
 //初期化
