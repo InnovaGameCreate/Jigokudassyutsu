@@ -55,7 +55,7 @@ void SceneMgr::Update() {
 }
 
 //•`‰æ
-void SceneMgr::Draw() {
+void SceneMgr::Draw()const {
 	scene_->Draw();		//ƒV[ƒ“‚Ì•`‰æ
 }
 

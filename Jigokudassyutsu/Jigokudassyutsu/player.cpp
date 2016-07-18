@@ -17,7 +17,7 @@ void Player::Update() {
 }
 
 //•`‰æ
-void Player::Draw() {
+void Player::Draw()const {
 	DrawString(0, 80, "ƒvƒŒƒCƒ„[", GetColor(255, 255, 255));
 }
 

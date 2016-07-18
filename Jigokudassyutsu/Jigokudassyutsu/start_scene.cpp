@@ -20,7 +20,7 @@ void StartScene::Update() {
 }
 
 //描画
-void StartScene::Draw() {
+void StartScene::Draw()const {
 	DrawString(0, 0, "スタート画面です。", GetColor(255, 255, 255));
 	DrawString(0, 20, "Escキーを押すとステージ選択画面に進みます。", GetColor(255, 255, 255));
 }

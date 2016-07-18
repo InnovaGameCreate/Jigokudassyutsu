@@ -17,7 +17,7 @@ void Map::Update() {
 }
 
 //•`‰æ
-void Map::Draw() {
+void Map::Draw()const {
 	DrawString(0, 60, "ƒ}ƒbƒv", GetColor(255, 255, 255));
 }
 

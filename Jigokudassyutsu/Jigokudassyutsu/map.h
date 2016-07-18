@@ -10,10 +10,10 @@ private:
 public:
 	Map(int stage_num);
 	~Map();
-	void Initialize();
-	void Finalize();
-	void Update();
-	void Draw();
+	void Initialize() override;
+	void Finalize() override;
+	void Update() override;
+	void Draw()const override;
 };
 
 #endif

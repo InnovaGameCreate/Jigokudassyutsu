@@ -9,10 +9,10 @@ private:
 public:
 	Player();
 	~Player();
-	void Initialize();
-	void Finalize();
-	void Update();
-	void Draw();
+	void Initialize() override;
+	void Finalize() override;
+	void Update() override;
+	void Draw()const  override;
 };
 
 #endif

@@ -28,7 +28,7 @@ void GameScene::Update() {
 }
 
 //•`‰æ
-void GameScene::Draw() {
+void GameScene::Draw()const {
 	map.Draw();
 	player.Draw();
 	DrawString(0, 0, "ƒQ[ƒ€‰æ–Ê‚Å‚·B", GetColor(255, 255, 255));
