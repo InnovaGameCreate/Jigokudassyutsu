@@ -15,11 +15,13 @@ GameScene::~GameScene() {
 //初期化
 void GameScene::Initialize() {
 	map.Initialize();
+	player.Initialize();
 }
 
 //更新
 void GameScene::Update() {
 	map.Update();
+	player.Update();
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
 		scene_changer_->ChangeScene(kSceneStart);//シーンをメニューに変更
 	}
@@ -28,11 +30,13 @@ void GameScene::Update() {
 //描画
 void GameScene::Draw() {
 	map.Draw();
+	player.Draw();
 	DrawString(0, 0, "ゲーム画面です。", GetColor(255, 255, 255));
 	DrawString(0, 20, "Escキーを押すとスタート画面に戻ります。", GetColor(255, 255, 255));
 }
 
 //終了処理
 void GameScene::Finalize() {
+	player.Finalize();
 	map.Finalize();
 }

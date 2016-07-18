@@ -21,6 +21,9 @@
     <Filter Include="ソース ファイル\scene_sub">
       <UniqueIdentifier>{dfa719e7-9aae-48d9-90e0-4cfc8f53e3fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\player">
+      <UniqueIdentifier>{ea26b62d-ae59-40c5-8ec8-eab50ca511fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -49,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="stage_select_scene.cpp">
       <Filter>ソース ファイル\scene_sub</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="stage_select_scene.h">
       <Filter>ソース ファイル\scene_sub</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>ソース ファイル\player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
