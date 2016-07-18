@@ -7,7 +7,7 @@ Fps::Fps() {
 }
 
 Fps::Fps(int fps) {
-	if (fps > 0 || fps < 200) {
+	if (fps < 0 || fps > 200) {
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "fps‚Ì’l‚ª•s³‚Å‚·,fps=60‚Éİ’è‚µ‚Ü‚µ‚½");
 		sampleing_count_ = 60;
 		default_fps_ = 60;
