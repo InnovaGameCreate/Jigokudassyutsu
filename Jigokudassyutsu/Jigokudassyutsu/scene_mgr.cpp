@@ -28,8 +28,20 @@ void SceneMgr::Update() {
 		case kSceneStageSelect:
 			scene_ = (BaseScene*)new StageSelectScene(this);
 			break;
-		case kSceneGame:
-			scene_ = (BaseScene*) new GameScene(this);
+		case kSceneGame1:
+			scene_ = (BaseScene*) new GameScene(this, 1);
+			break;
+		case kSceneGame2:
+			scene_ = (BaseScene*) new GameScene(this, 2);
+			break;
+		case kSceneGame3:
+			scene_ = (BaseScene*) new GameScene(this, 3);
+			break;
+		case kSceneGame4:
+			scene_ = (BaseScene*) new GameScene(this, 4);
+			break;
+		case kSceneGame5:
+			scene_ = (BaseScene*) new GameScene(this, 5);
 			break;
 		default:
 			util::ErrorOutPut(__FILE__, __func__, __LINE__, "不明なシーンです、スタート画面に移行します");

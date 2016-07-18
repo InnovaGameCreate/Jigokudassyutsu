@@ -9,8 +9,10 @@
 
 //ゲーム画面クラス
 class GameScene : public BaseScene {
+private:
+	int stage_num_;
 public:
-	GameScene::GameScene(ISceneChanger* changer);
+	GameScene::GameScene(ISceneChanger* changer,int stage_num);
 	void Initialize() override;    //初期化処理をオーバーライド。
 	void Finalize() override;        //終了処理をオーバーライド。
 	void Update() override;        //更新処理をオーバーライド。

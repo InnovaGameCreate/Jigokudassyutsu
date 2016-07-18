@@ -1,6 +1,7 @@
 #include "game_scene.h"
 
-GameScene::GameScene(ISceneChanger* changer) : BaseScene(changer) {
+GameScene::GameScene(ISceneChanger* changer, int stage_num) : BaseScene(changer) {
+	stage_num_ = stage_num;
 }
 
 //‰Šú‰»
