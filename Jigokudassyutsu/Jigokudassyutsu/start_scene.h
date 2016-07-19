@@ -9,6 +9,7 @@
 
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class StartScene : public BaseScene {
+private:
 public:
 	StartScene(ISceneChanger* changer);
 	~StartScene();

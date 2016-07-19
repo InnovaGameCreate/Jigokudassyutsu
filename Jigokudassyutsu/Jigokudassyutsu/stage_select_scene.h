@@ -9,6 +9,7 @@
 
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class StageSelectScene : public BaseScene {
+private:
 public:
 	StageSelectScene(ISceneChanger* changer);
 	~StageSelectScene();
