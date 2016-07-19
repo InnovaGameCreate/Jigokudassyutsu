@@ -158,7 +158,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="enemy_controller.cpp" />
     <ClCompile Include="fps.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
@@ -173,7 +173,7 @@
   <ItemGroup>
     <ClInclude Include="base_scene.h" />
     <ClInclude Include="define.h" />
-    <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemy_controller.h" />
     <ClInclude Include="fps.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="i_scene_changer.h" />

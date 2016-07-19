@@ -8,7 +8,7 @@
 #include "input.h"
 #include "map.h"
 #include "player.h"
-#include "enemy.h"
+#include "enemy_controller.h"
 
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class GameScene : public BaseScene {
@@ -16,7 +16,7 @@ private:
 	const int stage_num_;
 	Map map;
 	Player player;
-	Enemy enemy;
+	EnemyController enemy_controller;
 public:
 	GameScene(ISceneChanger* changer,int stage_num);
 	~GameScene();

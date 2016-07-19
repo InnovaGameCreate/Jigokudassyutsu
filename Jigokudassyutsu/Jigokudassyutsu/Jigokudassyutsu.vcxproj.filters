@@ -59,7 +59,7 @@
     <ClCompile Include="player.cpp">
       <Filter>ソース ファイル\player</Filter>
     </ClCompile>
-    <ClCompile Include="enemy.cpp">
+    <ClCompile Include="enemy_controller.cpp">
       <Filter>ソース ファイル\enemy</Filter>
     </ClCompile>
   </ItemGroup>
@@ -103,7 +103,7 @@
     <ClInclude Include="player.h">
       <Filter>ソース ファイル\player</Filter>
     </ClInclude>
-    <ClInclude Include="enemy.h">
+    <ClInclude Include="enemy_controller.h">
       <Filter>ソース ファイル\enemy</Filter>
     </ClInclude>
   </ItemGroup>
