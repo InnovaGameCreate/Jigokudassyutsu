@@ -19,14 +19,14 @@ private:
 	Player player;
 	EnemyController enemy_controller;
 
-	void GoNextStage();
+	void GoNextStage();		//次のステージに進みます
 public:
 	GameScene(ISceneChanger* changer,int stage_num);
 	~GameScene();
 	void Initialize() override;    //初期化処理をオーバーライド。
-	void Finalize() override;        //終了処理をオーバーライド。
+	void Finalize() override;      //終了処理をオーバーライド。
 	void Update() override;        //更新処理をオーバーライド。
-	void Draw()const override;            //描画処理をオーバーライド。
+	void Draw()const override;     //描画処理をオーバーライド。
 };
 
 #endif

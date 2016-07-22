@@ -20,6 +20,8 @@ void GameScene::Initialize() {
 	enemy_controller.Initialize();
 }
 
+//次のステージに進みます
+//最終ステージではクリア画面に進みます
 void GameScene::GoNextStage() {
 	switch (stage_num_) {
 	case 1:
