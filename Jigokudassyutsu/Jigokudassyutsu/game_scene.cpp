@@ -64,7 +64,7 @@ void GameScene::Draw()const {
 	char string[256];
 	sprintf_s(string, "ゲーム画面(ステージ%d)です。", stage_num_);
 	DrawString(0, 0, string, GetColor(255, 255, 255));
-	DrawString(0, 20, "Escキーを押すとスタート画面に戻ります。", GetColor(255, 255, 255));
+	DrawString(0, 20, "Escキーを押すと次のステージに進みます。", GetColor(255, 255, 255));
 }
 
 //終了処理

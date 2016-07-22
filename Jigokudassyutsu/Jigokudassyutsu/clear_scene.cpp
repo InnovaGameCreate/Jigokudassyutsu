@@ -22,7 +22,7 @@ void ClearScene::Update() {
 //描画
 void ClearScene::Draw()const {
 	DrawString(0, 0, "クリア画面です。", GetColor(255, 255, 255));
-	DrawString(0, 20, "Escキーを押すとスタート画面に進みます。", GetColor(255, 255, 255));
+	DrawString(0, 20, "Escキーを押すとスタート画面に戻ります。", GetColor(255, 255, 255));
 }
 
 //終了処理
