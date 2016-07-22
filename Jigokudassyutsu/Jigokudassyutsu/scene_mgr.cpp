@@ -25,9 +25,6 @@ void SceneMgr::Update() {
 		case kSceneStart:			//次の画面がメニューなら
 			scene_ = (BaseScene*) new StartScene(this);   //スタート画面のインスタンスを生成する
 			break;//以下略
-		case kSceneStageSelect:
-			scene_ = (BaseScene*)new StageSelectScene(this);
-			break;
 		case kSceneGame1:
 			scene_ = (BaseScene*) new GameScene(this, 1);
 			break;
@@ -42,6 +39,12 @@ void SceneMgr::Update() {
 			break;
 		case kSceneGame5:
 			scene_ = (BaseScene*) new GameScene(this, 5);
+			break;
+		case kSceneClear:
+			scene_ = (BaseScene*) new ClearScene(this);
+			break;
+		case kSceneOver:
+			scene_ = (BaseScene*) new OverScene(this);
 			break;
 		default:
 			util::ErrorOutPut(__FILE__, __func__, __LINE__, "不明なシーンです、スタート画面に移行します");

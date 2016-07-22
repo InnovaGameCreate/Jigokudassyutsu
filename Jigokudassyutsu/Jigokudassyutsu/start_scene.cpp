@@ -15,7 +15,7 @@ void StartScene::Initialize() {
 //更新
 void StartScene::Update() {
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
-		scene_changer_->ChangeScene(kSceneStageSelect);//シーンをメニューに変更
+		scene_changer_->ChangeScene(kSceneGame1);//シーンをメニューに変更
 	}
 }
 

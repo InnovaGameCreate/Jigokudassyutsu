@@ -2,16 +2,21 @@
 #define JIGOKUDASSYUTSU_SCENE_ISCENECHANGER_H_
 
 typedef enum {
-	kSceneStart,    //メニュー画面
-	kSceneStageSelect,	//ステージ選択画面
+	//スタート画面
+	kSceneStart,    
 	//ゲーム画面
 	kSceneGame1,
 	kSceneGame2,
 	kSceneGame3,
 	kSceneGame4,
 	kSceneGame5,
+	//ゲームクリア画面
+	kSceneClear,
+	//ゲームオーバー画面
+	kSceneOver,
 
-	kSceneNone,    //無し
+	//無し
+	kSceneNone
 } Scene;
 
 //シーンを変更するためのインターフェイスクラス

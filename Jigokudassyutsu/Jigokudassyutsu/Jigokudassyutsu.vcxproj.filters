@@ -53,14 +53,17 @@
     <ClCompile Include="input.cpp">
       <Filter>ソース ファイル\util</Filter>
     </ClCompile>
-    <ClCompile Include="stage_select_scene.cpp">
-      <Filter>ソース ファイル\scene_sub</Filter>
-    </ClCompile>
     <ClCompile Include="player.cpp">
       <Filter>ソース ファイル\player</Filter>
     </ClCompile>
     <ClCompile Include="enemy_controller.cpp">
       <Filter>ソース ファイル\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="clear_scene.cpp">
+      <Filter>ソース ファイル\scene_sub</Filter>
+    </ClCompile>
+    <ClCompile Include="over_scene.cpp">
+      <Filter>ソース ファイル\scene_sub</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,14 +100,17 @@
     <ClInclude Include="input.h">
       <Filter>ソース ファイル\util</Filter>
     </ClInclude>
-    <ClInclude Include="stage_select_scene.h">
-      <Filter>ソース ファイル\scene_sub</Filter>
-    </ClInclude>
     <ClInclude Include="player.h">
       <Filter>ソース ファイル\player</Filter>
     </ClInclude>
     <ClInclude Include="enemy_controller.h">
       <Filter>ソース ファイル\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="clear_scene.h">
+      <Filter>ソース ファイル\scene_sub</Filter>
+    </ClInclude>
+    <ClInclude Include="over_scene.h">
+      <Filter>ソース ファイル\scene_sub</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

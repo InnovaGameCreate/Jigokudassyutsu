@@ -158,20 +158,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="clear_scene.cpp" />
     <ClCompile Include="enemy_controller.cpp" />
     <ClCompile Include="fps.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="game_scene.cpp" />
+    <ClCompile Include="over_scene.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scene_mgr.cpp" />
-    <ClCompile Include="stage_select_scene.cpp" />
     <ClCompile Include="start_scene.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base_scene.h" />
+    <ClInclude Include="clear_scene.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="enemy_controller.h" />
     <ClInclude Include="fps.h" />
@@ -180,8 +182,8 @@
     <ClInclude Include="map.h" />
     <ClInclude Include="game_scene.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="over_scene.h" />
     <ClInclude Include="scene_mgr.h" />
-    <ClInclude Include="stage_select_scene.h" />
     <ClInclude Include="start_scene.h" />
     <ClInclude Include="task.h" />
     <ClInclude Include="util.h" />
