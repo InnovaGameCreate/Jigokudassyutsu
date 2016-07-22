@@ -37,6 +37,10 @@ void GameScene::GoNextStage() {
 	case 5:
 		scene_changer_->ChangeScene(kSceneClear);
 		break;
+	default:
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "未設定のstage_num_です,スタート画面に移行します");
+		scene_changer_->ChangeScene(kSceneStart);
+		break;
 	}
 }
 
