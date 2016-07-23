@@ -65,6 +65,9 @@
     <ClCompile Include="over_scene.cpp">
       <Filter>ソース ファイル\scene_sub</Filter>
     </ClCompile>
+    <ClCompile Include="base_enemy.cpp">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
@@ -111,6 +114,9 @@
     </ClInclude>
     <ClInclude Include="over_scene.h">
       <Filter>ソース ファイル\scene_sub</Filter>
+    </ClInclude>
+    <ClInclude Include="base_enemy.h">
+      <Filter>ソース ファイル\enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
