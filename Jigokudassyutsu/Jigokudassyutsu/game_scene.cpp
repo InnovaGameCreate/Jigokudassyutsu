@@ -61,9 +61,8 @@ void GameScene::Draw()const {
 	map.Draw();
 	player.Draw();
 	enemy_controller.Draw();
-	char string[256];
-	sprintf_s(string, "ゲーム画面(ステージ%d)です。", stage_num_);
-	DrawString(0, 0, string, GetColor(255, 255, 255));
+	std::string str = "ゲーム画面(ステージ" + std::to_string(stage_num_) + ")です。";
+	DrawString(0, 0, str.c_str(), GetColor(255, 255, 255));
 	DrawString(0, 20, "Escキーを押すと次のステージに進みます。", GetColor(255, 255, 255));
 }
 
