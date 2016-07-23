@@ -67,7 +67,7 @@ void Fps::Wait() {
 		return;
 	if (default_fps_ > 0) {
 		int tookTime = GetNowCount() - starttime_;	//‚©‚©‚Á‚½ŽžŠÔ
-		int waitTime = count_ * 1000. / default_fps_ - tookTime;//‘Ò‚Â‚×‚«ŽžŠÔ
+		int waitTime = (int)(count_ * 1000. / default_fps_ - tookTime);//‘Ò‚Â‚×‚«ŽžŠÔ
 		if (waitTime >= 0)	waittime_sum_ += waitTime;
 		else				waittime_sum_ = waitTime;
 		if (waitTime > 0) {
