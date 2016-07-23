@@ -7,6 +7,7 @@
 class Fps {
 private:
 	int default_fps_;				//設定したFPS
+	bool is_valid_wait_;				//待機が有効である(設定fpsとリフレッシュレートが同じ場合はfalse)
 
 	unsigned int starttime_;		//測定開始時刻
 	unsigned int count_;			//カウンタ
@@ -17,11 +18,13 @@ private:
 	double fps_avg_;				//平均fps
 	unsigned int totai_count_;		//経過フレームのカウント
 
+	int font_handle_;				//fps情報を描画するフォント
+
 	void Initialize();
 	double ComputeAverageTimepar() const;
 public:
-	Fps();
 	Fps(int fps);
+	~Fps();
 	void Update();						//FPS関連の情報更新(平均フレームレートの計算等)
 	void Wait();						//FPS制御のための待機関数
 	double get_fps_avg() const;			//現在の平均FPSの取得

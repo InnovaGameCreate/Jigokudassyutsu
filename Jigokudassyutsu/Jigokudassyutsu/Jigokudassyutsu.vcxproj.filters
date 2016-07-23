@@ -27,6 +27,9 @@
     <Filter Include="ソース ファイル\enemy">
       <UniqueIdentifier>{ea361c7b-b91f-4232-8b38-1950f65e09bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\font">
+      <UniqueIdentifier>{7caffad3-fb83-4fd9-90c9-20054345e007}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -112,5 +115,10 @@
     <ClInclude Include="over_scene.h">
       <Filter>ソース ファイル\scene_sub</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="hui.ttf">
+      <Filter>リソース ファイル\font</Filter>
+    </Font>
   </ItemGroup>
 </Project>

@@ -1,11 +1,5 @@
 #include "fps.h"
 
-Fps::Fps() {
-	sampleing_count_ = 60;
-	default_fps_ = 60;
-	Initialize();
-}
-
 Fps::Fps(int fps) {
 	if (fps < 0 || fps > 200) {
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "fpsの値が不正です,fps=60に設定しました");
@@ -13,14 +7,32 @@ Fps::Fps(int fps) {
 		default_fps_ = 60;
 	}
 	else {
+		//設定fpsがリフレッシュレートと同じ場合はWaitを無効にする
+		int refresh_rate;
+		HDC hdc;
+		hdc = GetDC(GetMainWindowHandle());	// デバイスコンテキストの取得
+		refresh_rate = GetDeviceCaps(hdc, VREFRESH);	// リフレッシュレートの取得
+		ReleaseDC(GetMainWindowHandle(), hdc);	// デバイスコンテキストの解放
+		if (refresh_rate == fps)
+			is_valid_wait_ = false;
+		else
+			is_valid_wait_ = true;
+		//fps設定
 		sampleing_count_ = fps;
 		default_fps_ = fps;
 	}
 	Initialize();
 }
 
+Fps::~Fps() {
+	DeleteFontToHandle(font_handle_);
+}
+
 //Fps初期化
 void Fps::Initialize() {
+	font_handle_ = CreateFontToHandle("fui.ttf", 15, 3);
+	if (font_handle_ == -1)
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "フォントの読み込みに失敗しました");
 	starttime_ = 0;
 	count_ = 0;
 	fps_avg_ = 0;
@@ -51,6 +63,8 @@ void Fps::Update() {
 //FPSを制御するために処理にかかった時間から算出した待機時間待機します。
 //処理が追いつかず待機時間が要らない場合は待機しません。
 void Fps::Wait() {
+	if (is_valid_wait_ == false)
+		return;
 	if (default_fps_ > 0) {
 		int tookTime = GetNowCount() - starttime_;	//かかった時間
 		int waitTime = count_ * 1000. / default_fps_ - tookTime;//待つべき時間
@@ -90,6 +104,10 @@ double Fps::ComputeAverageTimepar()  const {
 //引数:文字を描画する左上の座標
 void Fps::Draw(int x0, int y0)  const {
 	//FPS描画
-	SetFontSize(10);
-	DrawFormatString(x0, y0, GetColor(255, 255, 255), "FPS:%.2f %.2fms(%.2f%%)", fps_avg_, waittime_avg_, ComputeAverageTimepar());
+	char string[256];
+	if (is_valid_wait_ == true)
+		sprintf_s(string, "FPS:%.2f %.2fms(%.2f%%)", fps_avg_, waittime_avg_, ComputeAverageTimepar());
+	else
+		sprintf_s(string, "FPS:%.2f", fps_avg_);
+	DrawStringToHandle(x0, y0, string, GetColor(255, 255, 255), font_handle_);
 }
