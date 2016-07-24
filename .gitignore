@@ -254,3 +254,6 @@ paket-files/
 
 #追加
 Log.txt
+test_result.xml
+Jigokudassyutsu/Jigokudassyutsu/Test
+*.exe

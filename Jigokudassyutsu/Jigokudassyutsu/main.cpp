@@ -39,6 +39,8 @@ namespace {
 	}
 }
 
+//Testビルド以外の時のメイン関数
+#ifndef _JIGOKU_TEST
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	FirstInit();		//ゲーム起動時に必要な初期化
 	
@@ -65,3 +67,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	return 0;
 }
+#endif
+
+//Testビルドの時のメイン関数
+#ifdef _JIGOKU_TEST
+#include <gtest/gtest.h>
+
+int main(int argc, char *argv[]) {
+	testing::InitGoogleTest(&argc, argv);
+	RUN_ALL_TESTS();
+}
+#endif
