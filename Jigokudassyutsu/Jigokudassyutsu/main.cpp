@@ -69,16 +69,27 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 }
 #endif
 
-//Testビルドの時のメイン関数
 #ifdef _JIGOKU_TEST
 #include <gtest/gtest.h>
 
+//テスト実行時と終了時の処理
+class TestEnviroment :public ::testing::Environment {
+	virtual void SetUp() {
+		//DXライブラリ関係初期化
+		ChangeWindowMode(TRUE);//ウィンドウモード
+		DxLib_Init();//DXライブラリ初期化
+	}
+
+	virtual void TearDown() {
+		DxLib_End();//ＤＸライブラリ終了処理
+	}
+};
+
+//Testビルドの時のメイン関数
 int main(int argc, char *argv[]) {
 	testing::InitGoogleTest(&argc, argv);
-	//DXライブラリ関係初期化
-	ChangeWindowMode(TRUE);//ウィンドウモード
-	DxLib_Init();//DXライブラリ初期化
-
+	::testing::AddGlobalTestEnvironment(new TestEnviroment);
 	return RUN_ALL_TESTS();
 }
+
 #endif
