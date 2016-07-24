@@ -75,6 +75,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 int main(int argc, char *argv[]) {
 	testing::InitGoogleTest(&argc, argv);
+	//DXライブラリ関係初期化
+	ChangeWindowMode(TRUE);//ウィンドウモード
+	DxLib_Init();//DXライブラリ初期化
+
 	return RUN_ALL_TESTS();
 }
 #endif
