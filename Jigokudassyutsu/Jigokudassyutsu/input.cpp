@@ -57,11 +57,7 @@ namespace input {
 	//指定したキーの状態の取得(0押されてない、1以上押されたフレーム数)
 	//Handle値が不正の時は-1を返す
 	int CheckStateKey(unsigned char Handle) {
-		if (Handle < 0 || Handle >= 256) {
-			util::ErrorOutPut(__FILE__, __func__, __LINE__, "Handleの値が不正です");
-			return -1;
-		}
-		return state_key[Handle];
+		return state_key[Handle];//unsigned char のサイズは0~255の範囲なのでエラー確認はしない
 	}
 
 	//左クリックが押されていた長さを返す
