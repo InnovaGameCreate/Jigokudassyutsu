@@ -30,7 +30,7 @@ Fps::~Fps() {
 
 //Fps‰Šú‰»
 void Fps::Initialize() {
-	font_handle_ = CreateFontToHandle("fui.ttf", 15, 3);
+	font_handle_ = LoadFontDataToHandle("font/hui.dft");
 	if (font_handle_ == -1)
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "ƒtƒHƒ“ƒg‚Ì“Ç‚İ‚İ‚É¸”s‚µ‚Ü‚µ‚½");
 	starttime_ = 0;
