@@ -261,7 +261,7 @@
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="hui.ttf" />
+    <Font Include="font\hui.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\enemy\yurei.png" />

@@ -132,7 +132,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="hui.ttf">
+    <Font Include="font\hui.ttf">
       <Filter>リソース ファイル\font</Filter>
     </Font>
   </ItemGroup>
