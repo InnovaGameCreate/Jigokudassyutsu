@@ -259,7 +259,7 @@
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="hui.ttf" />
+    <Font Include="font\hui.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
