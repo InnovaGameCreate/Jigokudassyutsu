@@ -12,7 +12,6 @@ BaseEnemy::BaseEnemy(std::string  img_pass) {
 
 //デストラクタ
 BaseEnemy::~BaseEnemy() {
-
 }
 
 //初期化

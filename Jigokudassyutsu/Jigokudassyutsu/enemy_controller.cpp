@@ -10,7 +10,14 @@ EnemyController::~EnemyController() {
 
 //初期化
 void EnemyController::Initialize() {
-	vec_enemy.push_back(new EnemyYurei(100, 100));
+	switch (stage_num_) {
+	case 1:
+		vec_enemy.push_back(new EnemyYurei(100, 100));//幽霊
+		break;
+	default:
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "そのステージは設定されていません");
+		break;
+	}
 }
 
 //更新
@@ -31,6 +38,7 @@ void EnemyController::Draw()const {
 void EnemyController::Finalize() {
 	//敵削除
 	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end();) {
+		(*itr)->Finalize();
 		delete (*itr);
 		itr = vec_enemy.erase(itr);
 	}

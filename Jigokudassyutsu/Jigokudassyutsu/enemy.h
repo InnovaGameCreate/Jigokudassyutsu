@@ -8,7 +8,7 @@
 class EnemyYurei :public BaseEnemy {
 public:
 	EnemyYurei(float x,float y);
-	~EnemyYurei();
+	~EnemyYurei() {}
 	void Update(int player_x, int player_y) override;
 };
 

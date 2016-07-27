@@ -8,9 +8,6 @@ EnemyYurei::EnemyYurei(float x, float y) :BaseEnemy("img/enemy/yurei.png") {
 	speed_ = 1;
 }
 
-EnemyYurei::~EnemyYurei() {
-}
-
 void EnemyYurei::Update(int player_x, int player_y) {
 	x_ += speed_;
 	y_ += speed_;
