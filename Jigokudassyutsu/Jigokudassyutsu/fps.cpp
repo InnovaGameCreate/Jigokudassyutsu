@@ -31,16 +31,11 @@ Fps::~Fps() {
 //Fps初期化
 void Fps::Initialize() {
 	//フォント読み込み
-	LPCSTR font_path = "font/hui.ttf"; // 読み込むフォントファイルのパス
-	if (AddFontResourceEx(font_path, FR_PRIVATE, NULL) > 0) {
-	}
-	else {
-		// フォント読込エラー処理
-		util::ErrorOutPut(__FILE__, __func__, __LINE__, "フォントの読み込みに失敗しました");
-	}
-	font_handle_ = CreateFontToHandle("ふい字",15,1);
+	if (AddFontResourceEx("font/hui.ttf", FR_PRIVATE, NULL) <= 0)
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "フォントの読み込みに失敗しました");//フォント読込エラー処理
+	font_handle_ = CreateFontToHandle("ふい字",20,1);
 	if (font_handle_ == -1)
-		util::ErrorOutPut(__FILE__, __func__, __LINE__, "フォントの読み込みに失敗しました");
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "フォントデータの作成に失敗しました");
 	//0に設定
 	starttime_ = 0;
 	count_ = 0;
