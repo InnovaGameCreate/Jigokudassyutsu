@@ -10,17 +10,28 @@ EnemyController::~EnemyController() {
 
 //‰Šú‰»
 void EnemyController::Initialize() {
+	vec_enemy.push_back(new EnemyYurei(100, 100));
 }
 
 //XV
 void EnemyController::Update() {
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
+		(*itr)->Update(0, 0);
+	}
 }
 
 //•`‰æ
 void EnemyController::Draw()const {
-	DrawString(0, 100, "“G", GetColor(255, 255, 255));
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
+		(*itr)->Draw();
+	}
 }
 
 //I—¹ˆ—
 void EnemyController::Finalize() {
+	//“Gíœ
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end();) {
+		delete (*itr);
+		itr = vec_enemy.erase(itr);
+	}
 }

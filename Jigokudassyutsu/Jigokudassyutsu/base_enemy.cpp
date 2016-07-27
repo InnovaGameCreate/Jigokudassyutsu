@@ -19,6 +19,7 @@ BaseEnemy::~BaseEnemy() {
 void BaseEnemy::Initialize() {
 	x_ = y_ = 0.0f;
 	speed_ = 0.0f;
+	radius_ = 0.0f;
 }
 
 //•`‰æ

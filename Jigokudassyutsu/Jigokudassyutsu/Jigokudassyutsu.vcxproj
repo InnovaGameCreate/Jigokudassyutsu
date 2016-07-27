@@ -228,6 +228,7 @@
   <ItemGroup>
     <ClCompile Include="base_enemy.cpp" />
     <ClCompile Include="clear_scene.cpp" />
+    <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemy_controller.cpp" />
     <ClCompile Include="fps.cpp" />
     <ClCompile Include="input.cpp" />
@@ -245,6 +246,7 @@
     <ClInclude Include="base_scene.h" />
     <ClInclude Include="clear_scene.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="enemy.h" />
     <ClInclude Include="enemy_controller.h" />
     <ClInclude Include="fps.h" />
     <ClInclude Include="input.h" />
@@ -260,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="hui.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\enemy\yurei.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
