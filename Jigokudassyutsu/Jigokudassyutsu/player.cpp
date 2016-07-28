@@ -19,6 +19,10 @@ void Player::Update() {
 //描画
 void Player::Draw()const {
 	DrawString(0, 80, "プレイヤー", GetColor(255, 255, 255));
+	
+	HCURSOR hCursor;
+	hCursor = LoadCursorFromFile("Mario.cur");
+	SetCursor(hCursor);
 }
 
 //終了処理
