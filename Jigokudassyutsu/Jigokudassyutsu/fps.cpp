@@ -74,6 +74,8 @@ void Fps::Wait() {
 		int waitTime = (int)(count_ * 1000. / default_fps_ - tookTime);//待つべき時間
 		if (waitTime >= 0)	waittime_sum_ += waitTime;
 		else				waittime_sum_ = waitTime;
+		//必ず待機時間設定FPS以上にならないように待機時間を設ける(ループにかける時間が早すぎるとき)
+		if (waitTime < 0)	waitTime = 1000 / default_fps_;
 		if (waitTime > 0) {
 			WaitTimer(waitTime);	//待機
 		}
