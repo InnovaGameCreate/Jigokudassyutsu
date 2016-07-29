@@ -6,6 +6,7 @@
 
 class Player :public Task {
 private:
+	HCURSOR h_cursor_;
 public:
 	Player();
 	~Player();
