@@ -30,6 +30,9 @@
     <Filter Include="リソース ファイル\font">
       <UniqueIdentifier>{7caffad3-fb83-4fd9-90c9-20054345e007}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\img">
+      <UniqueIdentifier>{111b8178-2172-4273-bcd0-f9b47483bb37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,6 +72,9 @@
       <Filter>ソース ファイル\scene_sub</Filter>
     </ClCompile>
     <ClCompile Include="base_enemy.cpp">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
       <Filter>ソース ファイル\enemy</Filter>
     </ClCompile>
   </ItemGroup>
@@ -121,10 +127,18 @@
     <ClInclude Include="base_enemy.h">
       <Filter>ソース ファイル\enemy</Filter>
     </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="font\hui.ttf">
       <Filter>リソース ファイル\font</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\enemy\yurei.png">
+      <Filter>リソース ファイル\img</Filter>
+    </Image>
   </ItemGroup>
 </Project>

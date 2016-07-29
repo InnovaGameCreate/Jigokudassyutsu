@@ -12,13 +12,13 @@ BaseEnemy::BaseEnemy(std::string  img_pass) {
 
 //デストラクタ
 BaseEnemy::~BaseEnemy() {
-
 }
 
 //初期化
 void BaseEnemy::Initialize() {
 	x_ = y_ = 0.0f;
 	speed_ = 0.0f;
+	radius_ = 0.0f;
 }
 
 //描画

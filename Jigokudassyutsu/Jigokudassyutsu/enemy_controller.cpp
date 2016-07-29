@@ -10,17 +10,36 @@ EnemyController::~EnemyController() {
 
 //‰Šú‰»
 void EnemyController::Initialize() {
+	switch (stage_num_) {
+	case 1:
+		vec_enemy.push_back(new EnemyYurei(100, 100));//—H—ì
+		break;
+	default:
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "‚»‚ÌƒXƒe[ƒW‚Íİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+		break;
+	}
 }
 
 //XV
 void EnemyController::Update() {
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
+		(*itr)->Update(0, 0);
+	}
 }
 
 //•`‰æ
 void EnemyController::Draw()const {
-	DrawString(0, 100, "“G", GetColor(255, 255, 255));
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
+		(*itr)->Draw();
+	}
 }
 
 //I—¹ˆ—
 void EnemyController::Finalize() {
+	//“Gíœ
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end();) {
+		(*itr)->Finalize();
+		delete (*itr);
+		itr = vec_enemy.erase(itr);
+	}
 }
