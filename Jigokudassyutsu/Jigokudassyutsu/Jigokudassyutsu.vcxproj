@@ -264,6 +264,11 @@
     <Font Include="font\hui.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="img\enemy\datenshi.png" />
+    <Image Include="img\enemy\dokuro.png" />
+    <Image Include="img\enemy\enma.png" />
+    <Image Include="img\enemy\gaki.png" />
+    <Image Include="img\enemy\oni.png" />
     <Image Include="img\enemy\yurei.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

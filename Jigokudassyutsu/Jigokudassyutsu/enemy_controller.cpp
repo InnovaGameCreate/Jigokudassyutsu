@@ -12,7 +12,32 @@ EnemyController::~EnemyController() {
 void EnemyController::Initialize() {
 	switch (stage_num_) {
 	case 1:
-		vec_enemy.push_back(new EnemyYurei(100, 100));//—H—ì
+		//—H—ì*1
+		vec_enemy.push_back(new EnemyYurei(100, 100));
+		break;
+	case 2:
+		//‰ì‹S*2
+		vec_enemy.push_back(new EnemyGaki(100, 100));
+		vec_enemy.push_back(new EnemyGaki(200, 100));
+		break;
+	case 3:
+		//‚ª‚µ‚á‚Ç‚­‚ë*3
+		vec_enemy.push_back(new EnemyDokuro(100, 100));
+		vec_enemy.push_back(new EnemyDokuro(200, 100));
+		vec_enemy.push_back(new EnemyDokuro(300, 100));
+		break;
+	case 4:
+		//‘Â“Vg*3
+		vec_enemy.push_back(new EnemyDatenshi(100, 100));
+		vec_enemy.push_back(new EnemyDatenshi(200, 100));
+		vec_enemy.push_back(new EnemyDatenshi(300, 100));
+		break;
+	case 5:
+		//è…–‚‘å‰¤
+		vec_enemy.push_back(new EnemyEnma(100, 100));
+		//‹S*2
+		vec_enemy.push_back(new EnemyOni(200, 100));
+		vec_enemy.push_back(new EnemyOni(300, 100));
 		break;
 	default:
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "‚»‚ÌƒXƒe[ƒW‚Íİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

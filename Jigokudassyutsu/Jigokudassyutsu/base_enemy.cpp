@@ -10,6 +10,15 @@ BaseEnemy::BaseEnemy(std::string  img_pass) {
 	}
 }
 
+BaseEnemy::BaseEnemy(int img_handle) {
+	Initialize();
+	//画像ロード
+	img_handle_ = img_handle;
+	if (img_handle_ == -1) {
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "画像ハンドルが無効です");
+	}
+}
+
 //デストラクタ
 BaseEnemy::~BaseEnemy() {
 }

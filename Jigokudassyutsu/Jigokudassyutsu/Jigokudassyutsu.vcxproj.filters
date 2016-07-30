@@ -140,5 +140,20 @@
     <Image Include="img\enemy\yurei.png">
       <Filter>リソース ファイル\img</Filter>
     </Image>
+    <Image Include="img\enemy\gaki.png">
+      <Filter>リソース ファイル\img</Filter>
+    </Image>
+    <Image Include="img\enemy\dokuro.png">
+      <Filter>リソース ファイル\img</Filter>
+    </Image>
+    <Image Include="img\enemy\datenshi.png">
+      <Filter>リソース ファイル\img</Filter>
+    </Image>
+    <Image Include="img\enemy\enma.png">
+      <Filter>リソース ファイル\img</Filter>
+    </Image>
+    <Image Include="img\enemy\oni.png">
+      <Filter>リソース ファイル\img</Filter>
+    </Image>
   </ItemGroup>
 </Project>
