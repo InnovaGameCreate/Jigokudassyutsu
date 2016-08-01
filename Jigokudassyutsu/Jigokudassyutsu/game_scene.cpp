@@ -50,7 +50,9 @@ void GameScene::GoNextStage() {
 void GameScene::Update() {
 	map.Update();
 	player.Update();
-	enemy_controller.Update();
+	int px, py;
+	GetMousePoint(&px, &py);//プレイヤー座標を取得(仮)
+	enemy_controller.Update(px,py);
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
 		GoNextStage();//次のステージに進む
 	}
