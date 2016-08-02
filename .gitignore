@@ -257,3 +257,5 @@ Log.txt
 test_result.xml
 Jigokudassyutsu/Jigokudassyutsu/Test
 *.exe
+opencv_world310.dll
+opencv_world310d.dll

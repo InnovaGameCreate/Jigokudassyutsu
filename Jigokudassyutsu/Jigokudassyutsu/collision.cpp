@@ -1,6 +1,6 @@
 #include "collision.h"
 
-CollisionRoad::CollisionRoad(int stage_num) :stage_num_(stage_num){
+CollisionRoad::CollisionRoad(int stage_num) :stage_num_(stage_num) {
 }
 
 CollisionRoad::~CollisionRoad() {

@@ -3,6 +3,7 @@
 
 #include "DxLib.h"
 #include "task.h"
+#include <opencv2\core\core.hpp>
 
 class CollisionRoad {
 private:
