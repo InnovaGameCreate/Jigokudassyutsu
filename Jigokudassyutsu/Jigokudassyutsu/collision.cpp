@@ -7,6 +7,7 @@ CollisionRoad::~CollisionRoad() {
 }
 
 void CollisionRoad::Initialize() {
+	col_map_ = cv::imread("img/collision/test_road.png", cv::IMREAD_UNCHANGED);
 }
 
 void CollisionRoad::Finalize() {

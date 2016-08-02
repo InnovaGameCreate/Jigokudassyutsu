@@ -3,11 +3,12 @@
 
 #include "DxLib.h"
 #include "task.h"
-#include <opencv2\core\core.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 class CollisionRoad {
 private:
 	const int stage_num_;
+	cv::Mat col_map_;
 public:
 	CollisionRoad(int stage_num);
 	~CollisionRoad();

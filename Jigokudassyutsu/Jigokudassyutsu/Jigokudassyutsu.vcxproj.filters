@@ -30,11 +30,17 @@
     <Filter Include="リソース ファイル\font">
       <UniqueIdentifier>{7caffad3-fb83-4fd9-90c9-20054345e007}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\img">
-      <UniqueIdentifier>{111b8178-2172-4273-bcd0-f9b47483bb37}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\collision">
       <UniqueIdentifier>{0d7d147a-ba4d-41fb-8277-d99ada4b0490}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\img">
+      <UniqueIdentifier>{b9a035b7-f27a-4e5d-baba-dc7427577fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\img\enemy">
+      <UniqueIdentifier>{157558a2-9268-45eb-814b-b229979a9d11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\img\collision">
+      <UniqueIdentifier>{bd5cbda0-9c8d-4c5f-8756-163e835eadbb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -146,26 +152,29 @@
     </Font>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="img\enemy\yurei.png">
-      <Filter>リソース ファイル\img</Filter>
-    </Image>
-    <Image Include="img\enemy\gaki.png">
-      <Filter>リソース ファイル\img</Filter>
-    </Image>
-    <Image Include="img\enemy\dokuro.png">
-      <Filter>リソース ファイル\img</Filter>
-    </Image>
-    <Image Include="img\enemy\datenshi.png">
-      <Filter>リソース ファイル\img</Filter>
-    </Image>
-    <Image Include="img\enemy\enma.png">
-      <Filter>リソース ファイル\img</Filter>
-    </Image>
-    <Image Include="img\enemy\oni.png">
-      <Filter>リソース ファイル\img</Filter>
-    </Image>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Image Include="img\enemy\datenshi.png">
+      <Filter>リソース ファイル\img\enemy</Filter>
+    </Image>
+    <Image Include="img\enemy\dokuro.png">
+      <Filter>リソース ファイル\img\enemy</Filter>
+    </Image>
+    <Image Include="img\enemy\enma.png">
+      <Filter>リソース ファイル\img\enemy</Filter>
+    </Image>
+    <Image Include="img\enemy\gaki.png">
+      <Filter>リソース ファイル\img\enemy</Filter>
+    </Image>
+    <Image Include="img\enemy\oni.png">
+      <Filter>リソース ファイル\img\enemy</Filter>
+    </Image>
+    <Image Include="img\enemy\yurei.png">
+      <Filter>リソース ファイル\img\enemy</Filter>
+    </Image>
+    <Image Include="img\collision\test_road.png">
+      <Filter>リソース ファイル\img\collision</Filter>
+    </Image>
   </ItemGroup>
 </Project>
