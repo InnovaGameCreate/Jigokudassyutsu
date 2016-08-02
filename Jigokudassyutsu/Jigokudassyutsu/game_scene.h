@@ -9,15 +9,17 @@
 #include "map.h"
 #include "player.h"
 #include "enemy_controller.h"
+#include "collision.h"
 
 //ゲーム画面クラス
 class GameScene : public BaseScene {
 private:
 	const int stage_num_;
 
-	Map map;
-	Player player;
-	EnemyController enemy_controller;
+	Map map_;
+	Player player_;
+	EnemyController enemy_controller_;
+	CollisionRoad col_road_;
 
 	void GoNextStage();		//次のステージに進みます
 public:

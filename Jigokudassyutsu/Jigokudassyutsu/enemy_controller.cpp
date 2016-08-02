@@ -46,10 +46,11 @@ void EnemyController::Initialize() {
 }
 
 //XV
-void EnemyController::Update(float player_x, int player_y) {
+bool EnemyController::Update(float player_x, float player_y, float player_size) {
 	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
 		(*itr)->Update(player_x, player_y);
 	}
+	return false;
 }
 
 //•`‰æ

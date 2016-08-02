@@ -4,8 +4,9 @@
 GameScene::GameScene(ISceneChanger* changer, int stage_num) :
 	BaseScene(changer),		//シーンチェンジャー
 	stage_num_(stage_num),	//ステージナンバー
-	map(stage_num),			//マップクラス
-	enemy_controller(stage_num)		//敵クラス
+	map_(stage_num),			//マップクラス
+	enemy_controller_(stage_num),		//敵クラス
+	col_road_(stage_num)	//道の当たり判定
 {
 }
 
@@ -15,9 +16,10 @@ GameScene::~GameScene() {
 
 //初期化
 void GameScene::Initialize() {
-	map.Initialize();
-	player.Initialize();
-	enemy_controller.Initialize();
+	map_.Initialize();
+	player_.Initialize();
+	enemy_controller_.Initialize();
+	col_road_.Initialize();
 }
 
 //次のステージに進みます
@@ -48,11 +50,16 @@ void GameScene::GoNextStage() {
 
 //更新
 void GameScene::Update() {
-	map.Update();
-	player.Update();
+	map_.Update();
+	player_.Update();
+
 	int px, py;
+	float rad = 10;//プレイヤーの大きさを取得(仮)
 	GetMousePoint(&px, &py);//プレイヤー座標を取得(仮)
-	enemy_controller.Update(px,py);
+
+	enemy_controller_.Update(px, py, rad);
+	col_road_.Update(px, py, rad);
+
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
 		GoNextStage();//次のステージに進む
 	}
@@ -60,9 +67,10 @@ void GameScene::Update() {
 
 //描画
 void GameScene::Draw()const {
-	map.Draw();
-	player.Draw();
-	enemy_controller.Draw();
+	map_.Draw();
+	player_.Draw();
+	enemy_controller_.Draw();
+	col_road_.Draw();
 	std::string str = "ゲーム画面(ステージ" + std::to_string(stage_num_) + ")です。";
 	DrawString(0, 0, str.c_str(), GetColor(255, 255, 255));
 	DrawString(0, 20, "Escキーを押すと次のステージに進みます。", GetColor(255, 255, 255));
@@ -70,7 +78,8 @@ void GameScene::Draw()const {
 
 //終了処理
 void GameScene::Finalize() {
-	player.Finalize();
-	map.Finalize();
-	enemy_controller.Finalize();
+	player_.Finalize();
+	map_.Finalize();
+	enemy_controller_.Finalize();
+	col_road_.Finalize();
 }
