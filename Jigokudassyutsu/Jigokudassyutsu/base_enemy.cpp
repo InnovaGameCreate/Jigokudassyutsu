@@ -35,8 +35,12 @@ void BaseEnemy::Draw()const {
 	if (img_handle_ == -1)
 		return;
 	SetDrawMode(DX_DRAWMODE_BILINEAR);
-	DrawGraphF(x_, y_, img_handle_, TRUE);
+	DrawRotaGraph(x_, y_, 1, 0, img_handle_, TRUE);
 	SetDrawMode(DX_DRAWMODE_NEAREST);
+#ifdef _DEBUG
+	//“–‚½‚è”»’è—Ìˆæ‚ğ•`‰æ
+	DrawCircle(x_, y_, radius_, GetColor(255, 0, 0), FALSE);
+#endif
 }
 
 //I—¹ˆ—
