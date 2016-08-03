@@ -3,6 +3,8 @@
 
 #include "DxLib.h"
 #include "task.h"
+#include <iostream>
+#include <fstream>
 #include <opencv2/highgui/highgui.hpp>
 
 class CollisionRoad {
