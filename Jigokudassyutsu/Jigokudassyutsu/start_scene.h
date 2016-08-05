@@ -11,6 +11,8 @@
 class StartScene : public BaseScene {
 private:
 	int handle01;
+	int Cr;
+	int FontHandle;
 public:
 	StartScene(ISceneChanger* changer);
 	~StartScene();
