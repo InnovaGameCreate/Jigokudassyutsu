@@ -10,6 +10,7 @@
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class StartScene : public BaseScene {
 private:
+	int handle01;
 public:
 	StartScene(ISceneChanger* changer);
 	~StartScene();

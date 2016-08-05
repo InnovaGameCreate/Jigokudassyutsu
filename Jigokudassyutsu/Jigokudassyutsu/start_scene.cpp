@@ -1,7 +1,5 @@
 #include "start_scene.h"
 
-static int handle01;
-
 //コンストラクタ
 StartScene::StartScene(ISceneChanger* changer) : BaseScene(changer) {
 }
@@ -12,6 +10,7 @@ StartScene::~StartScene() {
 
 //初期化
 void StartScene::Initialize() {
+	handle01 = LoadGraph("enemy.png"); //画像の読み込み
 }
 
 //更新
@@ -27,7 +26,6 @@ void StartScene::Update() {
 
 //描画
 void StartScene::Draw()const {
-	handle01 = LoadGraph("enemy.png"); //画像の読み込み
 	DrawGraph(0, 0, handle01, TRUE);  // 読みこんだグラフィックを画面左上に描画
 
 	DrawString(0, 0, "スタート画面です。", GetColor(255, 255, 255));
