@@ -10,17 +10,62 @@ EnemyController::~EnemyController() {
 
 //‰Šú‰»
 void EnemyController::Initialize() {
+	switch (stage_num_) {
+	case 1:
+		//—H—ì*1
+		vec_enemy.push_back(new EnemyYurei(100, 100));
+		break;
+	case 2:
+		//‰ì‹S*2
+		vec_enemy.push_back(new EnemyGaki(100, 100));
+		vec_enemy.push_back(new EnemyGaki(200, 100));
+		break;
+	case 3:
+		//‚ª‚µ‚á‚Ç‚­‚ë*3
+		vec_enemy.push_back(new EnemyDokuro(100, 100));
+		vec_enemy.push_back(new EnemyDokuro(200, 100));
+		vec_enemy.push_back(new EnemyDokuro(300, 100));
+		break;
+	case 4:
+		//‘Â“Vg*3
+		vec_enemy.push_back(new EnemyDatenshi(100, 100));
+		vec_enemy.push_back(new EnemyDatenshi(200, 100));
+		vec_enemy.push_back(new EnemyDatenshi(300, 100));
+		break;
+	case 5:
+		//è…–‚‘å‰¤
+		vec_enemy.push_back(new EnemyEnma(100, 100));
+		//‹S*2
+		vec_enemy.push_back(new EnemyOni(200, 100));
+		vec_enemy.push_back(new EnemyOni(300, 100));
+		break;
+	default:
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "‚»‚ÌƒXƒe[ƒW‚Íİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+		break;
+	}
 }
 
 //XV
-void EnemyController::Update() {
+bool EnemyController::Update(float player_x, float player_y, float player_size) {
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
+		(*itr)->Update(player_x, player_y);
+	}
+	return false;
 }
 
 //•`‰æ
 void EnemyController::Draw()const {
-	DrawString(0, 100, "“G", GetColor(255, 255, 255));
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
+		(*itr)->Draw();
+	}
 }
 
 //I—¹ˆ—
 void EnemyController::Finalize() {
+	//“Gíœ
+	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end();) {
+		(*itr)->Finalize();
+		delete (*itr);
+		itr = vec_enemy.erase(itr);
+	}
 }

@@ -10,10 +10,12 @@ Player::~Player() {
 
 //‰Šú‰»
 void Player::Initialize() {
+	h_cursor_ = LoadCursorFromFile("Mario.cur");
 }
 
 //XV
 void Player::Update() {
+	SetCursor(h_cursor_);
 }
 
 //•`‰æ

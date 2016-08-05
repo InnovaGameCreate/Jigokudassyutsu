@@ -39,6 +39,8 @@ namespace {
 	}
 }
 
+//Testビルド以外の時のメイン関数
+#ifndef _JIGOKU_TEST
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	FirstInit();		//ゲーム起動時に必要な初期化
 	
@@ -56,7 +58,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//fps
 		fps.Update();
 		fps.Wait();
-		fps.Draw(10,10);
+		fps.Draw(10,50);
 	}
 
 	//終了処理
@@ -65,3 +67,29 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	return 0;
 }
+#endif
+
+#ifdef _JIGOKU_TEST
+#include <gtest/gtest.h>
+
+//テスト実行時と終了時の処理
+class TestEnviroment :public ::testing::Environment {
+	virtual void SetUp() {
+		//DXライブラリ関係初期化
+		ChangeWindowMode(TRUE);//ウィンドウモード
+		DxLib_Init();//DXライブラリ初期化
+	}
+
+	virtual void TearDown() {
+		DxLib_End();//ＤＸライブラリ終了処理
+	}
+};
+
+//Testビルドの時のメイン関数
+int main(int argc, char *argv[]) {
+	testing::InitGoogleTest(&argc, argv);
+	::testing::AddGlobalTestEnvironment(new TestEnviroment);
+	return RUN_ALL_TESTS();
+}
+
+#endif
