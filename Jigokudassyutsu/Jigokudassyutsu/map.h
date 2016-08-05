@@ -7,6 +7,7 @@
 class Map :public Task {
 private:
 	const int stage_num_;
+	int map_image;
 public:
 	Map(int stage_num);
 	~Map();
