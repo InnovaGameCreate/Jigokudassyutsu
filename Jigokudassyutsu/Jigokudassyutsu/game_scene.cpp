@@ -6,7 +6,7 @@ GameScene::GameScene(ISceneChanger* changer, int stage_num) :
 	kStageNum(stage_num),	//ステージナンバー
 	map_(stage_num),			//マップクラス
 	enemy_controller_(stage_num),		//敵クラス
-	col_road_(stage_num)	//道の当たり判定
+	col_road_(stage_num, kWindowWidth, kWindowHeight)	//道の当たり判定
 {
 }
 
@@ -57,8 +57,10 @@ void GameScene::Update() {
 	float rad = 10;//プレイヤーの大きさを取得(仮)
 	GetMousePoint(&px, &py);//プレイヤー座標を取得(仮)
 
-	enemy_controller_.Update(px, py, rad);
-	col_road_.Update(px, py, rad);
+	if(enemy_controller_.Update(px, py, rad))
+		std::cout << "敵と接触" << std::endl;
+	if (col_road_.Update(px, py, rad))
+		std::cout << "範囲外" << std::endl;
 
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
 		GoNextStage();//次のステージに進む

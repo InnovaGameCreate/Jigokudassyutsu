@@ -4,6 +4,7 @@
 #include "DxLib.h"
 #include "base_scene.h"
 #include "i_scene_changer.h"
+#include "define.h"
 
 #include "input.h"
 #include "map.h"
