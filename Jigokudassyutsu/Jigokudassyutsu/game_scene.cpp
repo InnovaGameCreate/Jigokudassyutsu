@@ -3,7 +3,7 @@
 //コンストラクタ
 GameScene::GameScene(ISceneChanger* changer, int stage_num) :
 	BaseScene(changer),		//シーンチェンジャー
-	stage_num_(stage_num),	//ステージナンバー
+	kStageNum(stage_num),	//ステージナンバー
 	map_(stage_num),			//マップクラス
 	enemy_controller_(stage_num),		//敵クラス
 	col_road_(stage_num)	//道の当たり判定
@@ -25,7 +25,7 @@ void GameScene::Initialize() {
 //次のステージに進みます
 //最終ステージではクリア画面に進みます
 void GameScene::GoNextStage() {
-	switch (stage_num_) {
+	switch (kStageNum) {
 	case 1:
 		scene_changer_->ChangeScene(kSceneGame2);
 		break;
@@ -71,7 +71,7 @@ void GameScene::Draw()const {
 	player_.Draw();
 	enemy_controller_.Draw();
 	col_road_.Draw();
-	std::string str = "ゲーム画面(ステージ" + std::to_string(stage_num_) + ")です。";
+	std::string str = "ゲーム画面(ステージ" + std::to_string(kStageNum) + ")です。";
 	DrawString(0, 0, str.c_str(), GetColor(255, 255, 255));
 	DrawString(0, 20, "Escキーを押すと次のステージに進みます。", GetColor(255, 255, 255));
 }

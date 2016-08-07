@@ -9,7 +9,7 @@
 
 class CollisionRoad {
 private:
-	const int stage_num_;
+	const int kStageNum;
 	cv::Mat col_map_;
 public:
 	CollisionRoad(int stage_num);

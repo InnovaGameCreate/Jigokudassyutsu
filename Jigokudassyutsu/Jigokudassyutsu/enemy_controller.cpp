@@ -1,7 +1,7 @@
 #include "enemy_controller.h"
 
 //コンストラクタ
-EnemyController::EnemyController(int stage_num) :stage_num_(stage_num){
+EnemyController::EnemyController(int stage_num) :kStageNum(stage_num){
 }
 
 //デストラクタ
@@ -10,7 +10,7 @@ EnemyController::~EnemyController() {
 
 //初期化
 void EnemyController::Initialize() {
-	switch (stage_num_) {
+	switch (kStageNum) {
 	case 1:
 		//幽霊*1
 		vec_enemy.push_back(new EnemyYurei(100, 100));

@@ -8,7 +8,7 @@
 
 class EnemyController :public Task {
 private:
-	const int stage_num_;
+	const int kStageNum;
 	std::vector<BaseEnemy*> vec_enemy;	//“G
 public:
 	EnemyController(int stage_num);

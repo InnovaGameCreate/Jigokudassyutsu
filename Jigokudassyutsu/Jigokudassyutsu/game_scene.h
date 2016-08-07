@@ -14,7 +14,7 @@
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class GameScene : public BaseScene {
 private:
-	const int stage_num_;
+	const int kStageNum;
 
 	Map map_;
 	Player player_;
