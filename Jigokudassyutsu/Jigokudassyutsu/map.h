@@ -3,11 +3,13 @@
 
 #include "task.h"
 #include "DxLib.h"
+#include "util.h"
+#include <string.h>
 
 class Map :public Task {
 private:
 	const int stage_num_;
-	int map_image;
+	int map_image_;
 public:
 	Map(int stage_num);
 	~Map();
