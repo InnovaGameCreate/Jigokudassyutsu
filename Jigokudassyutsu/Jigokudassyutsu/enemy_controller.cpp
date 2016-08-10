@@ -1,7 +1,7 @@
 #include "enemy_controller.h"
 
 //コンストラクタ
-EnemyController::EnemyController(int stage_num) :kStageNum(stage_num){
+EnemyController::EnemyController(int stage_num) :kStageNum(stage_num) {
 }
 
 //デストラクタ
@@ -46,11 +46,14 @@ void EnemyController::Initialize() {
 }
 
 //更新
-bool EnemyController::Update(float player_x, float player_y, float player_size) {
+bool EnemyController::Update(float player_x, float player_y, float player_radius) {
+	bool is_collsion = false;
 	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
-		(*itr)->Update(player_x, player_y);
+		(*itr)->Update(player_x, player_y);//更新
+		if ((*itr)->IsCollision(player_x, player_y, player_radius) == true)//プレイヤーとの当たり判定
+			is_collsion = true;
 	}
-	return false;
+	return is_collsion;
 }
 
 //描画

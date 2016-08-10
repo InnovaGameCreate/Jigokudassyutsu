@@ -30,6 +30,13 @@ void BaseEnemy::Initialize() {
 	radius_ = 0.0f;
 }
 
+//ƒvƒŒƒCƒ„[‚Æ‚Ì“–‚½‚è”»’è
+bool BaseEnemy::IsCollision(float px, float py, float pr) {
+	if (util::CircleCollision(px, py, pr, x_, y_, radius_))
+		return true;
+	return false;
+}
+
 //•`‰æ
 void BaseEnemy::Draw()const {
 	if (img_handle_ == -1)

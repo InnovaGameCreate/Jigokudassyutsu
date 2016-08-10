@@ -15,7 +15,7 @@ public:
 	~EnemyController();
 	void Initialize() override;
 	void Finalize() override;
-	bool Update(float player_x, float player_y, float player_size);
+	bool Update(float player_x, float player_y, float player_radius);
 	void Update() {}//åpè≥ÇµÇΩUpdateÇÕâΩÇ‡ÇµÇ»Ç¢
 	void Draw()const  override;
 };

@@ -20,6 +20,7 @@ public:
 	BaseEnemy(int img_handle);
 	virtual ~BaseEnemy();
 	virtual void Update(int player_x, int player_y) = 0;//更新は派生クラスで定義する
+	bool IsCollision(float px, float py, float pr);//プレイヤーと接触しているとtrueを返す
 	void Draw()const;
 	void Finalize();
 };
