@@ -12,7 +12,7 @@ CollisionRoad::~CollisionRoad() {
 
 void CollisionRoad::Initialize() {
 	//“–‚½‚è”»’è—p‚Ì‰æ‘œ“Ç‚İ‚İ
-	col_map_ = cv::imread("img/collision/test_road.png", cv::IMREAD_UNCHANGED);
+	col_map_ = cv::imread("img/collision/" + std::to_string(kStageNum) + ".png", cv::IMREAD_UNCHANGED);
 	//ƒGƒ‰[ˆ—
 	if (col_map_.data == NULL) {
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "‰æ‘œ‚Ì“Ç‚İ‚İ‚É¸”s");

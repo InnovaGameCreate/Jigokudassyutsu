@@ -11,7 +11,7 @@ Map::~Map() {
 //‰Šú‰»
 void Map::Initialize() {
 	char image_path[48];
-	sprintf_s(image_path, "back_image%d.jpg", stage_num_);
+	sprintf_s(image_path, "img/map/%d.jpg", stage_num_);
 	map_image_ = LoadGraph(image_path);
 
 	if (map_image_ == -1)
