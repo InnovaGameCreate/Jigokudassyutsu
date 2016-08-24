@@ -15,8 +15,14 @@
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class GameScene : public BaseScene {
 private:
-	const int kStageNum;
+	enum GameState {
+		kStart,
+		kPlay,
+		kGoal
+	};
 
+	const int kStageNum;
+	GameState game_state_;
 	Map map_;
 	Player player_;
 	EnemyController enemy_controller_;
