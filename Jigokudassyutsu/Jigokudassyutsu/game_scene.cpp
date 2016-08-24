@@ -57,6 +57,8 @@ void GameScene::Update() {
 		std::cout << "敵と接触" << std::endl;
 	if (col_road_.Update(px, py, player_.kPlayerRadius))
 		std::cout << "範囲外" << std::endl;
+	else
+		std::cout << "範囲内" << std::endl;
 
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
 		GoNextStage();//次のステージに進む

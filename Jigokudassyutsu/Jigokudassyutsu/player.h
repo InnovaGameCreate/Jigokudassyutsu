@@ -18,7 +18,7 @@ public:
 	void Update(int *x, int *y);
 	void Draw()const;
 
-	const int kPlayerRadius = 25;
+	const int kPlayerRadius = 10;
 };
 
 #endif

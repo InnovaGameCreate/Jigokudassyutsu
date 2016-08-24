@@ -43,7 +43,7 @@ namespace {
 #ifndef _JIGOKU_TEST
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	FirstInit();		//ゲーム起動時に必要な初期化
-	
+
 	SceneMgr scene_mgr;	//画面遷移クラス生成
 	Fps fps(60);		//fps管理クラス作成(fps=60)
 
@@ -58,7 +58,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//fps
 		fps.Update();
 		fps.Wait();
-		fps.Draw(10,50);
+		fps.Draw(10, 50);
 	}
 
 	//終了処理
