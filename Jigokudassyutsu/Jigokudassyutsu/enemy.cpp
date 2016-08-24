@@ -8,7 +8,7 @@ EnemyYurei::EnemyYurei(float x, float y) :BaseEnemy("img/enemy/yurei.png") {
 	speed_ = 1;
 }
 
-void EnemyYurei::Update(int player_x, int player_y) {
+void EnemyYurei::Update(int player_x, int player_y, int cnt) {
 	x_ += speed_;
 	y_ += speed_;
 }
@@ -21,7 +21,7 @@ EnemyGaki::EnemyGaki(float x, float y) :BaseEnemy("img/enemy/gaki.png") {
 	speed_ = 1;
 }
 
-void EnemyGaki::Update(int player_x, int player_y) {
+void EnemyGaki::Update(int player_x, int player_y, int cnt) {
 	x_ += speed_;
 	y_ += speed_;
 }
@@ -34,7 +34,7 @@ EnemyDokuro::EnemyDokuro(float x, float y) :BaseEnemy("img/enemy/dokuro.png") {
 	speed_ = 1;
 }
 
-void EnemyDokuro::Update(int player_x, int player_y) {
+void EnemyDokuro::Update(int player_x, int player_y, int cnt) {
 	x_ += speed_;
 	y_ += speed_;
 }
@@ -47,7 +47,7 @@ EnemyDatenshi::EnemyDatenshi(float x, float y) :BaseEnemy("img/enemy/datenshi.pn
 	speed_ = 1;
 }
 
-void EnemyDatenshi::Update(int player_x, int player_y) {
+void EnemyDatenshi::Update(int player_x, int player_y, int cnt) {
 	x_ += speed_;
 	y_ += speed_;
 }
@@ -60,7 +60,7 @@ EnemyEnma::EnemyEnma(float x, float y) :BaseEnemy("img/enemy/enma.png") {
 	speed_ = 1;
 }
 
-void EnemyEnma::Update(int player_x, int player_y) {
+void EnemyEnma::Update(int player_x, int player_y, int cnt) {
 	x_ += speed_;
 	y_ += speed_;
 }
@@ -73,7 +73,7 @@ EnemyOni::EnemyOni(float x, float y) :BaseEnemy("img/enemy/oni.png") {
 	speed_ = 1;
 }
 
-void EnemyOni::Update(int player_x, int player_y) {
+void EnemyOni::Update(int player_x, int player_y, int cnt) {
 	x_ += speed_;
 	y_ += speed_;
 }
