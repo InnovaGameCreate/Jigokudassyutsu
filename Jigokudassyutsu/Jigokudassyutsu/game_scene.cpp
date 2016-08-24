@@ -51,15 +51,11 @@ void GameScene::GoNextStage() {
 //更新
 void GameScene::Update() {
 	map_.Update();
-	player_.Update();
-
 	int px, py;
-	float rad = 10;//プレイヤーの大きさを取得(仮)
-	GetMousePoint(&px, &py);//プレイヤー座標を取得(仮)
-
-	if(enemy_controller_.Update(px, py, rad))
+	player_.Update(&px, &py);
+	if (enemy_controller_.Update(px, py, player_.kPlayerRadius))
 		std::cout << "敵と接触" << std::endl;
-	if (col_road_.Update(px, py, rad))
+	if (col_road_.Update(px, py, player_.kPlayerRadius))
 		std::cout << "範囲外" << std::endl;
 
 	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら

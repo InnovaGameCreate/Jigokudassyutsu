@@ -3,17 +3,22 @@
 
 #include "task.h"
 #include "DxLib.h"
+#include "util.h"
 
-class Player :public Task {
+class Player {
 private:
-	HCURSOR h_cursor_;
+	int player_img_;
+	int x_;
+	int y_;
 public:
 	Player();
 	~Player();
-	void Initialize() override;
-	void Finalize() override;
-	void Update() override;
-	void Draw()const  override;
+	void Initialize();
+	void Finalize();
+	void Update(int *x, int *y);
+	void Draw()const;
+
+	const int kPlayerRadius = 25;
 };
 
 #endif

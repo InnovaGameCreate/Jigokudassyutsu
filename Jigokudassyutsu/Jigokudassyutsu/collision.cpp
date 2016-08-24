@@ -35,7 +35,7 @@ bool CollisionRoad::Update(float x, float y, float radius) {
 		return true;
 	//ü‚è‚Ì8“_‚ğ’²¸
 	for (double t = 0; t <= DX_PI*2.0; t += DX_PI / 4.0) {
-		if (IsColMapAlpha(radius*sin(t) + x, radius*cos(t)) + y == true) {
+		if (IsColMapAlpha(radius*sin(t) + x, radius*cos(t) + y) == true) {
 			return true;
 		}
 	}
