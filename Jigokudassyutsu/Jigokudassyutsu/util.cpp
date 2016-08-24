@@ -17,4 +17,11 @@ namespace util {
 		else
 			return false;
 	}
+
+	bool CirclePointCollision(double cx, double cy, double radius, double px, double py) {
+		double d = (cx - px)*(cx - px) + (cy - py)*(cy - py);
+		if (d <= radius*radius)
+			return true;
+		return false;
+	}
 }

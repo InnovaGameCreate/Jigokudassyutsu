@@ -17,11 +17,14 @@ class GameScene : public BaseScene {
 private:
 	enum GameState {
 		kStart,
-		kPlay,
-		kGoal
+		kPlay
 	};
 
+	static const int kStartX[];
+	static const int kStartY[];
+	static const int kStartRadius = 40;
 	const int kStageNum;
+	int start_img_;
 	GameState game_state_;
 	Map map_;
 	Player player_;

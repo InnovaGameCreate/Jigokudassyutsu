@@ -12,6 +12,8 @@ namespace util {
 
 	//‰~‚Æ‰~‚Ì“–‚½‚è”»’è
 	bool CircleCollision(double c1_x, double c1_y, double c1_r, double c2_x, double c2_y, double c2_r);
+	//‰~‚Æ“V‚Ì‚ ‚½‚è”»’è
+	bool CirclePointCollision(double cx, double cy, double radius, double px, double py);
 }
 
 #endif
