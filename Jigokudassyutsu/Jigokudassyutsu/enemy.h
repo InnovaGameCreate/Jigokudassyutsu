@@ -2,6 +2,7 @@
 #define JIGOKUDASSYUTSU_ENEMY_ENEMY_H_
 
 #include <string>
+#include <math.h>
 #include "DxLib.h"
 #include "base_enemy.h"
 

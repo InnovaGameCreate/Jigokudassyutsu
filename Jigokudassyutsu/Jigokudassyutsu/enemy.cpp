@@ -9,8 +9,8 @@ EnemyYurei::EnemyYurei(float x, float y) :BaseEnemy("img/enemy/yurei.png") {
 }
 
 void EnemyYurei::Update(int player_x, int player_y, int cnt) {
-	x_ += speed_;
-	y_ += speed_;
+	x_ = 200 * sinf(cnt*DX_PI_F / 180) + 200;
+	y_ = 200 * cosf(cnt * 3 * DX_PI_F / 180) + 200;
 }
 
 ////////////////////////////////////   ‰ì‹S   ////////////////////////////////////
@@ -22,8 +22,20 @@ EnemyGaki::EnemyGaki(float x, float y) :BaseEnemy("img/enemy/gaki.png") {
 }
 
 void EnemyGaki::Update(int player_x, int player_y, int cnt) {
-	x_ += speed_;
-	y_ += speed_;
+	if (abs(player_x - x_) < 30 || abs(player_y - y_) < 30) {
+		if (abs(player_x - x_) < 30) {
+			if (player_y < y_) y_ -= 1;
+			else y_ += 1;
+		}
+		if (abs(player_y - y_) < 30) {
+			if (player_x < x_) x_ -= 1;
+			else x_ += 1;
+		}
+	}
+	else {
+		x_ += sinf(cnt * DX_PI_F / 180) + sinf((cnt - 1) * DX_PI_F / 180);
+		y_ += cosf(cnt * 3 * DX_PI_F / 180) + cosf((cnt - 1) * 3 * DX_PI_F / 180);
+	}
 }
 
 ////////////////////////////////////   ‚ª‚µ‚á‚Ç‚­‚ë   ////////////////////////////////////
