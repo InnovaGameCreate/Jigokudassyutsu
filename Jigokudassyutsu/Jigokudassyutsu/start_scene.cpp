@@ -12,7 +12,7 @@ StartScene::~StartScene() {
 void StartScene::Initialize() {
 	font_handle1_ = CreateFontToHandle("Ÿà–¾’© Demibold", 50, 2);
 	font_handle2_ = CreateFontToHandle(NULL, 20, 6);
-	handle01_ = LoadGraph("start_back.png"); //‰æ‘œ‚Ì“Ç‚İ‚İ
+	handle01_ = LoadGraph("img/back/start.png"); //‰æ‘œ‚Ì“Ç‚İ‚İ
 	if (handle01_ == -1) {
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "‰æ‘œ‚ğ“Ç‚İ‚ß‚Ü‚¹‚ñ‚Å‚µ‚½"); //ƒGƒ‰[ˆ—
 	}
