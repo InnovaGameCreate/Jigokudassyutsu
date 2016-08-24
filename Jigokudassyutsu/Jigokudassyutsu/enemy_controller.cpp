@@ -1,7 +1,11 @@
 #include "enemy_controller.h"
 
 //コンストラクタ
-EnemyController::EnemyController(int stage_num) :kStageNum(stage_num) {
+EnemyController::EnemyController(int stage_num, int map_widht, int map_height) :
+	kStageNum(stage_num),
+	kMapWidth(map_widht),
+	kMapHeight(map_height)
+{
 }
 
 //デストラクタ

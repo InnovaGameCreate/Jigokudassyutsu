@@ -5,7 +5,7 @@ GameScene::GameScene(ISceneChanger* changer, int stage_num) :
 	BaseScene(changer),		//シーンチェンジャー
 	kStageNum(stage_num),	//ステージナンバー
 	map_(stage_num),			//マップクラス
-	enemy_controller_(stage_num),		//敵クラス
+	enemy_controller_(stage_num, kWindowWidth, kWindowHeight),		//敵クラス
 	col_road_(stage_num, kWindowWidth, kWindowHeight)	//道の当たり判定
 {
 }

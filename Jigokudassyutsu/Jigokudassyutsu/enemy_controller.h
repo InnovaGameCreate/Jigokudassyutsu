@@ -11,13 +11,15 @@ private:
 	const int kStageNum;
 	std::vector<BaseEnemy*> vec_enemy;	//“G
 public:
-	EnemyController(int stage_num);
+	EnemyController(int stage_num,int map_widht,int map_height);
 	~EnemyController();
 	void Initialize() override;
 	void Finalize() override;
 	bool Update(float player_x, float player_y, float player_radius);
 	void Update() {}//Œp³‚µ‚½Update‚Í‰½‚à‚µ‚È‚¢
 	void Draw()const  override;
+
+	const int kMapWidth, kMapHeight;
 };
 
 #endif
