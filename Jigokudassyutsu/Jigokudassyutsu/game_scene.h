@@ -23,8 +23,13 @@ private:
 	static const int kStartX[];
 	static const int kStartY[];
 	static const int kStartRadius = 40;
+	static const int kGoalX[];
+	static const int kGoalY[];
+	static const int kGoalRadius = 40;
+
 	const int kStageNum;
 	int start_img_;
+	int goal_img_;
 	GameState game_state_;
 	Map map_;
 	Player player_;
