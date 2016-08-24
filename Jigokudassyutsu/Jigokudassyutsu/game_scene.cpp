@@ -92,13 +92,8 @@ void GameScene::Update() {
 #endif
 		//“¹‚Æ‚Ì‚ ‚½‚è”»’è
 		if (col_road_.Update(px, py, player_.kPlayerRadius))
-#ifndef _DEBUG
 			scene_changer_->ChangeScene(kSceneOver);
-#else
-			std::cout << "”ÍˆÍŠO" << std::endl;
-		else
-			std::cout << "”ÍˆÍ“à" << std::endl;
-#endif
+
 		//ƒS[ƒ‹“ž’…
 		if (util::CirclePointCollision(kGoalX[kStageNum - 1], kGoalY[kStageNum - 1], kGoalRadius, px, py)) {
 			GoNextStage();
