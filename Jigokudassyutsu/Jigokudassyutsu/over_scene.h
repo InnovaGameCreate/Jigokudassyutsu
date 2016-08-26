@@ -10,6 +10,8 @@
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class OverScene : public BaseScene {
 private:
+	int handle01_;
+	int font_handle1_;
 public:
 	OverScene(ISceneChanger* changer);
 	~OverScene();

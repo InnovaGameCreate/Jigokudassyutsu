@@ -10,6 +10,11 @@ OverScene::~OverScene() {
 
 //初期化
 void OverScene::Initialize() {
+	font_handle1_ = CreateFontToHandle(NULL, 20, 6);
+	handle01_ = LoadGraph("img/over.jpg"); //画像の読み込み
+	if (handle01_ == -1) {
+		util::ErrorOutPut(__FILE__, __func__, __LINE__, "画像を読み込めませんでした"); //エラー処理
+	}
 }
 
 //更新
@@ -21,10 +26,12 @@ void OverScene::Update() {
 
 //描画
 void OverScene::Draw()const {
-	DrawString(0, 0, "ゲームオーバー画面です。", GetColor(255, 255, 255));
-	DrawString(0, 20, "Escキーを押すとスタート画面に進みます。", GetColor(255, 255, 255));
+	DrawGraph(0, 0, handle01_, TRUE);  // 読みこんだグラフィックを画面左上に描画
+	DrawStringToHandle(230, 220, "EScキーでリトライ", GetColor(0, 255, 255), font_handle1_);
 }
 
 //終了処理
 void OverScene::Finalize() {
+	DeleteGraph(handle01_);
+	DeleteFontToHandle(font_handle1_);
 }
