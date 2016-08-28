@@ -15,7 +15,7 @@ public:
 	~EnemyController();
 	void Initialize();
 	void Finalize();
-	bool Update(float player_x, float player_y, float player_radius);
+	bool Update(float player_x, float player_y, float player_radius);//プレイヤー座標、プレイヤー半径が必要
 	void Draw()const;
 
 	const int kMapWidth, kMapHeight;

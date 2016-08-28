@@ -23,6 +23,8 @@ public:
 	~CollisionRoad();
 	void Initialize();
 	void Finalize();
+	//道からはみ出している時trueを返す
+	//引数はプレイヤー座標と半径
 	bool Update(float x, float y, float radius);
 	void Draw()const;
 };

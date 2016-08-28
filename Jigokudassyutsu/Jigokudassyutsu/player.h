@@ -15,10 +15,10 @@ public:
 	~Player();
 	void Initialize();
 	void Finalize();
-	void Update(int *x, int *y);
+	void Update(int *x, int *y);//xyは現在のプレイヤー中心位置を格納する整数ポインタ
 	void Draw()const;
 
-	const int kPlayerRadius = 10;
+	const int kPlayerRadius = 10;//プレイヤーの半径
 };
 
 #endif

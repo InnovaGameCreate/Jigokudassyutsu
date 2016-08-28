@@ -23,18 +23,19 @@ GameScene::~GameScene() {
 
 //初期化
 void GameScene::Initialize() {
+	//各クラス初期化
 	map_.Initialize();
 	player_.Initialize();
 	enemy_controller_.Initialize();
 	col_road_.Initialize();
-
+	//スタート部分とゴール部分の画像読み込み
 	start_img_ = LoadGraph("img/system/start.png");
 	if (start_img_ == -1)
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "スタート画像が読み込めません");
 	goal_img_ = LoadGraph("img/system/goal.png");
 	if (start_img_ == -1)
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "ゴール画像が読み込めません");
-
+	//状態をスタートに設定
 	game_state_ = kStart;
 }
 
@@ -66,15 +67,19 @@ void GameScene::GoNextStage() {
 
 //更新
 void GameScene::Update() {
+	//マップは常に更新
 	map_.Update();
-
+	//ゲームの状態によって分岐
 	switch (game_state_) {
 	case kStart://スタート前
+		//マウス座標取得
 		int mouse_x, mouse_y;
 		GetMousePoint(&mouse_x, &mouse_y);
-		//スタートボタンとのあたり判定
+		//スタートボタン上でクリックすればプレイ状態に移行
 		if (util::CirclePointCollision(kStartX[kStageNum - 1], kStartY[kStageNum - 1], kStartRadius, mouse_x, mouse_y)) {
+			//ホバー時マウスの形を変える
 			SetCursor(LoadCursor(NULL, IDC_HAND));
+			//クリックで移行
 			if (input::CheckMouseLeftKey() == 1) 
 				game_state_ = kPlay;
 		}
@@ -83,7 +88,7 @@ void GameScene::Update() {
 		int px, py;
 		//プレイヤー更新
 		player_.Update(&px, &py);
-		//敵更新&敵とのあたり判定
+		//敵更新 & 敵とのあたり判定
 		if (enemy_controller_.Update(px, py, player_.kPlayerRadius))
 #ifndef _DEBUG
 			scene_changer_->ChangeScene(kSceneOver);
@@ -96,7 +101,7 @@ void GameScene::Update() {
 
 		//ゴール到着
 		if (util::CirclePointCollision(kGoalX[kStageNum - 1], kGoalY[kStageNum - 1], kGoalRadius, px, py)) {
-			GoNextStage();
+			GoNextStage();//次のステージに進む
 		}
 		break;
 	}
@@ -109,8 +114,9 @@ void GameScene::Update() {
 
 //描画
 void GameScene::Draw()const {
+	//マップは常に描画
 	map_.Draw();
-
+	//状態によって分岐
 	switch (game_state_) {
 	case kStart://スタート前
 		DrawRotaGraph(kStartX[kStageNum - 1], kStartY[kStageNum - 1], 1.0, 0.0, start_img_, TRUE);//スタートボタン
@@ -132,9 +138,10 @@ void GameScene::Draw()const {
 
 //終了処理
 void GameScene::Finalize() {
+	//画像を開放
 	DeleteGraph(start_img_);
 	DeleteGraph(goal_img_);
-
+	//各クラスの終了処理
 	player_.Finalize();
 	map_.Finalize();
 	enemy_controller_.Finalize();

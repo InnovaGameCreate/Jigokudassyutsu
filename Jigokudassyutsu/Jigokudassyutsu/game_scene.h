@@ -15,11 +15,12 @@
 //ゲーム画面クラス
 class GameScene : public BaseScene {
 private:
+	//ゲームの状態
 	enum GameState {
 		kStart,
 		kPlay
 	};
-
+	//スタート、ゴール部分の定数
 	static const int kStartX[];
 	static const int kStartY[];
 	static const int kStartRadius = 40;
@@ -27,10 +28,12 @@ private:
 	static const int kGoalY[];
 	static const int kGoalRadius = 40;
 
-	const int kStageNum;
-	int start_img_;
-	int goal_img_;
-	GameState game_state_;
+	const int kStageNum;//現在のステージ
+	int start_img_;		//スタート部分の画像ハンドル
+	int goal_img_;		//ゴール部分の画像ハンドル
+	GameState game_state_;//ゲームの状態
+
+	//各クラス
 	Map map_;
 	Player player_;
 	EnemyController enemy_controller_;
