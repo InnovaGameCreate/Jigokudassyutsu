@@ -16,7 +16,7 @@ Visual Studio Community 2015(C++言語)
 [OpenCV3.1][opencv]
 
 ## 使用方法
-DXライブラリを解凍して出来るファイル(DxLib_VC)をCドライブ直下に置く
+DXライブラリを解凍して出来るファイル(DxLib_VC)をCドライブ直下に置く  
 OpenCVはNugetパッケージを使用しているので「NuGet パッケージの復元の有効化」がされていればそのままビルドできるはずです
 
 [google]: http://www.textdrop.net/google-styleguide-ja/cppguide.xml "Google C++スタイルガイド 日本語訳"
