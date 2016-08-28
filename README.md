@@ -12,7 +12,7 @@
 Visual Studio Community 2015(C++言語)
 
 ## 使用ライブラリ
-[DXライブラリ3.16d][dxlib]
+[DXライブラリ3.16d][dxlib]  
 [OpenCV3.1][opencv]
 
 ## 使用方法
