@@ -47,15 +47,14 @@ void EnemyController::Initialize() {
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "そのステージは設定されていません");
 		break;
 	}
-	cnt_ = 0;
 }
 
 //更新
 bool EnemyController::Update(float player_x, float player_y, float player_radius) {
 	bool is_collsion = false;
-	cnt_++;//カウンタ
 	for (auto itr = vec_enemy.begin(); itr != vec_enemy.end(); itr++) {
-		(*itr)->Update(player_x, player_y, cnt_);//更新
+		(*itr)->Count();//カウンタ
+		(*itr)->Update(player_x, player_y, (*itr)->get_cnt_());//更新
 		if ((*itr)->IsCollision(player_x, player_y, player_radius) == true)//プレイヤーとの当たり判定
 			is_collsion = true;
 	}
