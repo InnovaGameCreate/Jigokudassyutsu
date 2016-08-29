@@ -1,7 +1,7 @@
 #include "map.h"
 
 //コンストラクタ
-Map::Map(int stage_num) :stage_num_(stage_num){
+Map::Map(int stage_num) :kStageNum(stage_num){
 }
 
 //デストラクタ
@@ -11,7 +11,7 @@ Map::~Map() {
 //初期化
 void Map::Initialize() {
 	char image_path[48];
-	sprintf_s(image_path, "img/map/%d.jpg", stage_num_);
+	sprintf_s(image_path, "img/map/%d.jpg", kStageNum);
 	map_image_ = LoadGraph(image_path);
 
 	if (map_image_ == -1)
