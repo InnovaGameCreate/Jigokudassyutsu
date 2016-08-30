@@ -4,12 +4,15 @@
 #include "DxLib.h"
 #include "base_scene.h"
 #include "i_scene_changer.h"
+#include "util.h"
 
 #include "input.h"
 
 //ƒQ[ƒ€‰æ–ÊƒNƒ‰ƒX
 class ClearScene : public BaseScene {
 private:
+	int clear_image_;
+	int font_handle_01_, font_handle_02_;
 public:
 	ClearScene(ISceneChanger* changer);
 	~ClearScene();
