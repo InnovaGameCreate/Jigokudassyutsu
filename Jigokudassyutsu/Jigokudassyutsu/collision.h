@@ -11,6 +11,10 @@
 
 class CollisionRoad {
 private:
+#ifdef _DEBUG
+	float x_, y_, radius_;
+#endif // DEBUG
+
 	const int kStageNum;	//ステージナンバー
 	const int kMapWidth;	//マップの横ピクセル数
 	const int kMapHeight;	//マップの縦ピクセル数

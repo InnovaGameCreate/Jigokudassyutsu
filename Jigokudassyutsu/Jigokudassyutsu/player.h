@@ -18,7 +18,7 @@ public:
 	void Update(int *x, int *y);//xyは現在のプレイヤー中心位置を格納する整数ポインタ
 	void Draw()const;
 
-	const int kPlayerRadius = 10;//プレイヤーの半径
+	const int kPlayerRadius;//プレイヤーの半径
 };
 
 #endif

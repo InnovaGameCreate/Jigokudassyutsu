@@ -1,7 +1,7 @@
 #include "player.h"
 
 //コンストラクタ
-Player::Player() {
+Player::Player() :kPlayerRadius(3) {
 }
 
 //デストラクタ
@@ -10,7 +10,7 @@ Player::~Player() {
 
 //初期化
 void Player::Initialize() {
-	player_img_ = LoadGraph("img/player/Mario.png");
+	player_img_ = LoadGraph("img/player/player.png");
 	if (player_img_ == -1)
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "プレイヤー画像読み込み失敗");
 }

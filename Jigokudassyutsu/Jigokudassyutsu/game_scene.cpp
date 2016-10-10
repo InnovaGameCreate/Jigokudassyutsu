@@ -11,11 +11,11 @@ GameScene::GameScene(ISceneChanger* changer, int stage_num) :
 }
 
 //スタート位置
-const int GameScene::kStartX[] = { 80,80,80,80,80 };
-const int GameScene::kStartY[] = { 400,400,400,400,400 };
+const int GameScene::kStartX[] = { 32,15,5,633,147 };
+const int GameScene::kStartY[] = { 455,454,436,426,397 };
 //ゴール位置
-const int GameScene::kGoalX[] = { 500,500,500,500,500 };
-const int GameScene::kGoalY[] = { 80,80,80,80,80 };
+const int GameScene::kGoalX[] = { 633,32,637,7,640 };
+const int GameScene::kGoalY[] = { 324,13,37,440,0 };
 
 //デストラクタ
 GameScene::~GameScene() {
@@ -80,7 +80,7 @@ void GameScene::Update() {
 			//ホバー時マウスの形を変える
 			SetCursor(LoadCursor(NULL, IDC_HAND));
 			//クリックで移行
-			if (input::CheckMouseLeftKey() == 1) 
+			if (input::CheckMouseLeftKey() == 1)
 				game_state_ = kPlay;
 		}
 		break;

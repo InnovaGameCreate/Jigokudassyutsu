@@ -30,6 +30,12 @@ void CollisionRoad::Finalize() {
 }
 
 bool CollisionRoad::Update(float x, float y, float radius) {
+#ifdef _DEBUG
+	x_ = x;
+	y_ = y;
+	radius_ = radius;
+#endif // DEBUG
+
 	//’†S‚ğ’²¸
 	if (IsColMapAlpha(x, y) == true)
 		return true;
@@ -43,7 +49,18 @@ bool CollisionRoad::Update(float x, float y, float radius) {
 }
 
 void CollisionRoad::Draw()const {
+#ifdef _DEBUG
+	//’†S‚ğ’²¸
+	DrawCircle(x_, y_, 1, GetColor(255, 0, 0));
+	//ü‚è‚Ì8“_‚ğ’²¸
+	for (double t = 0; t <= DX_PI*2.0; t += DX_PI / 4.0) {
+		DrawCircle(radius_*sin(t) + x_, radius_*cos(t) + y_, 1, GetColor(255, 0, 0));
+	}
+#endif // DEBUG
 }
+
+
+
 
 inline bool CollisionRoad::IsColMapAlpha(int x, int y) {
 	if (x<0 || x>kMapWidth || y<0 || y>kMapHeight) {
