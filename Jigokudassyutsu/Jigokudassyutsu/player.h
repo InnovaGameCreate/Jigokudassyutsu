@@ -4,12 +4,16 @@
 #include "task.h"
 #include "DxLib.h"
 #include "util.h"
+#include "fps.h"
 
 class Player {
 private:
-	int player_img_;
+	static const int kPlayerImgNum = 4;
+	int player_img_[kPlayerImgNum];
 	int x_;
 	int y_;
+	int player_img_cnt_;
+	int cnt_;
 public:
 	Player();
 	~Player();
