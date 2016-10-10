@@ -12,7 +12,7 @@
 class ClearScene : public BaseScene {
 private:
 	int clear_image_;
-	int font_handle_01_, font_handle_02_;
+	int font_handle_01_;
 public:
 	ClearScene(ISceneChanger* changer);
 	~ClearScene();

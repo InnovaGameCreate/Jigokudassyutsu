@@ -11,7 +11,7 @@ OverScene::~OverScene() {
 //初期化
 void OverScene::Initialize() {
 	font_handle1_ = CreateFontToHandle(NULL, 20, 6);
-	handle01_ = LoadGraph("img/over.jpg"); //画像の読み込み
+	handle01_ = LoadGraph("img/back/over.jpg"); //画像の読み込み
 	if (handle01_ == -1) {
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "画像を読み込めませんでした"); //エラー処理
 	}
@@ -30,8 +30,8 @@ void OverScene::Update() {
 //描画
 void OverScene::Draw()const {
 	DrawGraph(0, 0, handle01_, TRUE);  // 読みこんだグラフィックを画面左上に描画
-	DrawStringToHandle(220, 220, "Escキーでメニューへ", GetColor(0, 0, 0), font_handle1_);
-	DrawStringToHandle(220, 260, "F1キーでステージ1へ", GetColor(0, 0, 0), font_handle1_);
+	DrawStringToHandle(220, 370, "Escキーでメニューへ", GetColor(0, 0, 0), font_handle1_);
+	DrawStringToHandle(220, 410, "F1キーでステージ1へ", GetColor(0, 0, 0), font_handle1_);
 }
 
 //終了処理

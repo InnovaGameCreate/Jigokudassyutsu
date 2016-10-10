@@ -23,10 +23,10 @@ private:
 	//スタート、ゴール部分の定数
 	static const int kStartX[];
 	static const int kStartY[];
-	static const int kStartRadius = 40;
+	static const int kStartRadius = 30;
 	static const int kGoalX[];
 	static const int kGoalY[];
-	static const int kGoalRadius = 40;
+	static const int kGoalRadius = 30;
 
 	const int kStageNum;//現在のステージ
 	int start_img_;		//スタート部分の画像ハンドル
