@@ -4,13 +4,13 @@
 EnemyYurei::EnemyYurei(float x, float y) :BaseEnemy("img/enemy/yurei.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 50;
-	speed_ = 1;
+	radius_ = 25;
+	speed_ = 200;
 }
 
 void EnemyYurei::Update(int player_x, int player_y, int cnt) {
-	x_ = 200 * sinf(cnt*DX_PI_F / 180) + 200;
-	y_ = 200 * cosf(cnt * 3 * DX_PI_F / 180) + 200;
+	x_ = speed_ * sinf((cnt/4.0)*DX_PI_F / 180) + 200;
+	y_ = speed_ * cosf((3.0*cnt / 4.0) * DX_PI_F / 180) + 200;
 }
 
 ////////////////////////////////////   ‰ì‹S   ////////////////////////////////////
