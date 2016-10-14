@@ -22,7 +22,7 @@ void EnemyController::Initialize() {
 	case 2:
 		//‰ì‹S*2
 		vec_enemy.push_back(new EnemyGaki(100, 100));
-		vec_enemy.push_back(new EnemyGaki(200, 100));
+		vec_enemy.push_back(new EnemyGaki(500, 100));
 		break;
 	case 3:
 		//‚ª‚µ‚á‚Ç‚­‚ë*3

@@ -17,18 +17,18 @@ void EnemyYurei::Update(int player_x, int player_y, int cnt) {
 EnemyGaki::EnemyGaki(float x, float y) :BaseEnemy("img/enemy/gaki.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 50;
+	radius_ = 25;
 	speed_ = 1;
 }
 
 void EnemyGaki::Update(int player_x, int player_y, int cnt) {
 	if (abs(player_x - x_) < 30 || abs(player_y - y_) < 30) {
 		if (abs(player_x - x_) < 30) {
-			if (player_y < y_) y_ -= 1;
+			if (player_y < y_) y_ -= 0.5;
 			else y_ += 1;
 		}
 		if (abs(player_y - y_) < 30) {
-			if (player_x < x_) x_ -= 1;
+			if (player_x < x_) x_ -= 0.5;
 			else x_ += 1;
 		}
 	}
