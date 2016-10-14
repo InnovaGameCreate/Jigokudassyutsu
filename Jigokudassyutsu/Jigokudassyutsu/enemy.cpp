@@ -9,7 +9,7 @@ EnemyYurei::EnemyYurei(float x, float y) :BaseEnemy("img/enemy/yurei.png") {
 }
 
 void EnemyYurei::Update(int player_x, int player_y, int cnt) {
-	x_ = speed_ * sinf((cnt/4.0)*DX_PI_F / 180) + 200;
+	x_ = speed_ * sinf((cnt / 4.0)*DX_PI_F / 180) + 200;
 	y_ = speed_ * cosf((3.0*cnt / 4.0) * DX_PI_F / 180) + 200;
 }
 
@@ -42,13 +42,37 @@ void EnemyGaki::Update(int player_x, int player_y, int cnt) {
 EnemyDokuro::EnemyDokuro(float x, float y) :BaseEnemy("img/enemy/dokuro.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 50;
-	speed_ = 1;
+	radius_ = 25;
+	speed_ = 0.5;
+	is_compute_frame = true;
 }
 
 void EnemyDokuro::Update(int player_x, int player_y, int cnt) {
-	x_ += speed_;
-	y_ += speed_;
+	//乱数で更新
+	if (is_compute_frame) {
+		tmp_rand_x = util::GetRandom(0, kWindowWidth);
+		tmp_rand_y = util::GetRandom(0, kWindowHeight);
+		is_compute_frame = false;
+		printf("%d,%d\n", tmp_rand_x, tmp_rand_y);
+	}
+	//一定時間で更新フラグを立てる
+	if (cnt % 300 == 0) {
+		is_compute_frame = true;
+	}
+
+	//乱数座標に向けて移動
+	if (x_ > tmp_rand_x)
+		x_ -= speed_;
+	else if (x_ < tmp_rand_x)
+		x_ += speed_;
+	else
+		is_compute_frame = true;
+	if (y_ > tmp_rand_y)
+		y_ -= speed_;
+	else if (y_ < tmp_rand_y)
+		y_ += speed_;
+	else
+		is_compute_frame = true;
 }
 
 ////////////////////////////////////   堕天使   ////////////////////////////////////

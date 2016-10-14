@@ -3,13 +3,15 @@
 
 #include <string>
 #include <math.h>
+#include "util.h"
 #include "DxLib.h"
 #include "base_enemy.h"
+#include "define.h"
 
 //幽霊
 class EnemyYurei :public BaseEnemy {
 public:
-	EnemyYurei(float x,float y);
+	EnemyYurei(float x, float y);
 	void Update(int player_x, int player_y, int cnt) override;
 };
 
@@ -22,6 +24,9 @@ public:
 
 //がしゃどくろ
 class EnemyDokuro :public BaseEnemy {
+private:
+	int tmp_rand_x, tmp_rand_y;//乱数による目標座標
+	bool is_compute_frame;//計算フラグ
 public:
 	EnemyDokuro(float x, float y);
 	void Update(int player_x, int player_y, int cnt) override;
