@@ -111,13 +111,22 @@ void EnemyDatenshi::Update(int player_x, int player_y, int cnt) {
 EnemyEnma::EnemyEnma(float x, float y) :BaseEnemy("img/enemy/enma.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 70;
-	speed_ = 1;
+	radius_ = 45;
+	speed_ = 5;
+	speed_amount_of_change_ = 0.2;
 }
 
 void EnemyEnma::Update(int player_x, int player_y, int cnt) {
-	x_ += speed_;
-	y_ += speed_;
+	//‰~‚ÌŒvZ
+	x_ += speed_ * (cos(cnt / 100.0) - cos((cnt - 1) / 100.0));
+	y_ += speed_ * (sin(cnt / 100.0) - sin((cnt - 1) / 100.0));
+	//”¼Œa•Ï‰»—ÊŒvZ
+	if (speed_ < 8)
+		speed_amount_of_change_ = 0.2;
+	if (speed_>280)
+		speed_amount_of_change_ = -0.2;
+	//”¼Œa•Ï‰»
+	speed_ += speed_amount_of_change_;
 }
 
 ////////////////////////////////////   ‹S   ////////////////////////////////////

@@ -38,7 +38,7 @@ void EnemyController::Initialize() {
 		break;
 	case 5:
 		//è…–‚‘å‰¤
-		vec_enemy.push_back(new EnemyEnma(350, 100));
+		vec_enemy.push_back(new EnemyEnma(350, 250));
 		//‹S*2
 		vec_enemy.push_back(new EnemyOni(500, 100));
 		vec_enemy.push_back(new EnemyOni(200, 100));

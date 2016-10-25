@@ -45,6 +45,8 @@ public:
 
 //è…–‚‘å‰¤
 class EnemyEnma :public BaseEnemy {
+private:
+	float speed_amount_of_change_;//”¼Œa•Ï‰»—Ê
 public:
 	EnemyEnma(float x, float y);
 	void Update(int player_x, int player_y, int cnt) override;
