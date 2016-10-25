@@ -32,16 +32,16 @@ void EnemyController::Initialize() {
 		break;
 	case 4:
 		//堕天使*3
-		vec_enemy.push_back(new EnemyDatenshi(100, 100));
-		vec_enemy.push_back(new EnemyDatenshi(200, 100));
-		vec_enemy.push_back(new EnemyDatenshi(300, 100));
+		vec_enemy.push_back(new EnemyDatenshi(100, 50));
+		vec_enemy.push_back(new EnemyDatenshi(500, 200));
+		vec_enemy.push_back(new EnemyDatenshi(100, 430));
 		break;
 	case 5:
 		//閻魔大王
-		vec_enemy.push_back(new EnemyEnma(100, 100));
+		vec_enemy.push_back(new EnemyEnma(350, 100));
 		//鬼*2
+		vec_enemy.push_back(new EnemyOni(500, 100));
 		vec_enemy.push_back(new EnemyOni(200, 100));
-		vec_enemy.push_back(new EnemyOni(300, 100));
 		break;
 	default:
 		util::ErrorOutPut(__FILE__, __func__, __LINE__, "そのステージは設定されていません");

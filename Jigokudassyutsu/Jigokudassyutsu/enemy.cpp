@@ -44,54 +44,74 @@ EnemyDokuro::EnemyDokuro(float x, float y) :BaseEnemy("img/enemy/dokuro.png") {
 	y_ = y;
 	radius_ = 25;
 	speed_ = 0.5;
-	is_compute_frame = true;
+	is_compute_frame_ = true;
 }
 
 void EnemyDokuro::Update(int player_x, int player_y, int cnt) {
 	//乱数で更新
-	if (is_compute_frame) {
-		tmp_rand_x = util::GetRandom(0, kWindowWidth);
-		tmp_rand_y = util::GetRandom(0, kWindowHeight);
-		is_compute_frame = false;
+	if (is_compute_frame_) {
+		tmp_rand_x_ = util::GetRandom(0, kWindowWidth);
+		tmp_rand_y_ = util::GetRandom(0, kWindowHeight);
+		is_compute_frame_ = false;
 	}
 	//一定時間で更新フラグを立てる
 	if (cnt % 300 == 0) {
-		is_compute_frame = true;
+		is_compute_frame_ = true;
 	}
 
 	//乱数座標に向けて移動
-	if (x_ > tmp_rand_x)
+	if (x_ > tmp_rand_x_)
 		x_ -= speed_;
-	else if (x_ < tmp_rand_x)
+	else if (x_ < tmp_rand_x_)
 		x_ += speed_;
 	else
-		is_compute_frame = true;
-	if (y_ > tmp_rand_y)
+		is_compute_frame_ = true;
+	if (y_ > tmp_rand_y_)
 		y_ -= speed_;
-	else if (y_ < tmp_rand_y)
+	else if (y_ < tmp_rand_y_)
 		y_ += speed_;
 	else
-		is_compute_frame = true;
+		is_compute_frame_ = true;
 }
 
 ////////////////////////////////////   堕天使   ////////////////////////////////////
 EnemyDatenshi::EnemyDatenshi(float x, float y) :BaseEnemy("img/enemy/datenshi.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 60;
+	radius_ = 40;
 	speed_ = 1;
+	x_movement_ = speed_;
+	y_movement_ = speed_;
+	compute_frame_num_ = 210;
 }
 
 void EnemyDatenshi::Update(int player_x, int player_y, int cnt) {
-	x_ += speed_;
-	y_ += speed_;
+	//円の計算
+	x_ += 100 * (cos(cnt / 100.0) - cos((cnt - 1) / 100.0));
+	y_ += 100 * (sin(cnt / 100.0) - sin((cnt - 1) / 100.0));
+	//直線を足す
+	if (cnt%compute_frame_num_ == 0) {
+		x_movement_ = -x_movement_;
+		y_movement_ = -y_movement_;
+	}
+	if (x_ >= kWindowWidth)
+		x_movement_ = -speed_;
+	else if (x_ <= 0)
+		x_movement_ = speed_;
+	if (y_ >= kWindowHeight)
+		y_movement_ = -speed_;
+	else if (y_ <= 0)
+		y_movement_ = speed_;
+	x_ += x_movement_;
+	y_ += y_movement_;
+
 }
 
 ////////////////////////////////////   閻魔大王   ////////////////////////////////////
 EnemyEnma::EnemyEnma(float x, float y) :BaseEnemy("img/enemy/enma.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 100;
+	radius_ = 70;
 	speed_ = 1;
 }
 
@@ -104,11 +124,26 @@ void EnemyEnma::Update(int player_x, int player_y, int cnt) {
 EnemyOni::EnemyOni(float x, float y) :BaseEnemy("img/enemy/oni.png") {
 	x_ = x;
 	y_ = y;
-	radius_ = 60;
-	speed_ = 1;
+	radius_ = 40;
+	speed_ = 1.2;
+	//乱数で初期方向を決める
+	x_movement_ = speed_;
+	if (util::GetRandom(0, 1))
+		x_movement_ *= -1;
+	y_movement_ = speed_;
+	if (util::GetRandom(0, 1))
+		y_movement_ *= -1;
 }
 
 void EnemyOni::Update(int player_x, int player_y, int cnt) {
-	x_ += speed_;
-	y_ += speed_;
+	if (x_ >= kWindowWidth)
+		x_movement_ = -speed_;
+	else if (x_ <= 0)
+		x_movement_ = speed_;
+	if (y_ >= kWindowHeight)
+		y_movement_ = -speed_;
+	else if (y_ <= 0)
+		y_movement_ = speed_;
+	x_ += x_movement_;
+	y_ += y_movement_;
 }

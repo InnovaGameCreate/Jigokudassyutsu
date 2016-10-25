@@ -43,7 +43,7 @@ void BaseEnemy::Draw()const {
 	if (img_handle_ == -1)
 		return;
 	SetDrawMode(DX_DRAWMODE_BILINEAR);
-	DrawRotaGraph(x_, y_, 1, 0, img_handle_, TRUE);
+	DrawRotaGraphF(x_, y_, 1, 0, img_handle_, TRUE);
 	SetDrawMode(DX_DRAWMODE_NEAREST);
 #ifdef _DEBUG
 	//“–‚½‚è”»’è—Ìˆæ‚ð•`‰æ

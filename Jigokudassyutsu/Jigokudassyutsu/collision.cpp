@@ -63,7 +63,7 @@ void CollisionRoad::Draw()const {
 
 
 inline bool CollisionRoad::IsColMapAlpha(int x, int y) {
-	if (x<0 || x>kMapWidth || y<0 || y>kMapHeight) {
+	if (x<=0 || x>=kMapWidth || y<=0 || y>=kMapHeight) {
 		return false;
 	}
 	if (col_map_.data[y * col_map_.step + x * col_map_.elemSize() + 3] == 0)

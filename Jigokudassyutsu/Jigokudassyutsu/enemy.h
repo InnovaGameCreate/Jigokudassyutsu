@@ -25,8 +25,8 @@ public:
 //がしゃどくろ
 class EnemyDokuro :public BaseEnemy {
 private:
-	int tmp_rand_x, tmp_rand_y;//乱数による目標座標
-	bool is_compute_frame;//計算フラグ
+	int tmp_rand_x_, tmp_rand_y_;//乱数による目標座標
+	bool is_compute_frame_;//計算フラグ
 public:
 	EnemyDokuro(float x, float y);
 	void Update(int player_x, int player_y, int cnt) override;
@@ -34,6 +34,10 @@ public:
 
 //堕天使
 class EnemyDatenshi :public BaseEnemy {
+private:
+	float x_movement_;//x移動量
+	float y_movement_;//y移動量
+	int compute_frame_num_;//計算フラグ
 public:
 	EnemyDatenshi(float x, float y);
 	void Update(int player_x, int player_y, int cnt) override;
@@ -48,6 +52,9 @@ public:
 
 //鬼
 class EnemyOni :public BaseEnemy {
+private:
+	float x_movement_;//x移動量
+	float y_movement_;//y移動量
 public:
 	EnemyOni(float x, float y);
 	void Update(int player_x, int player_y, int cnt) override;
