@@ -27,8 +27,6 @@ void Player::Update(int *x, int *y) {
 	GetMousePoint(&x_, &y_);
 	*x = x_;
 	*y = y_;
-	//ƒJ[ƒ\ƒ‹–³Œø
-	ShowCursor(false);
 }
 
 //•`‰æ

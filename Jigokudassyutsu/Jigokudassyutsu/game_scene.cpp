@@ -75,13 +75,15 @@ void GameScene::Update() {
 		//マウス座標取得
 		int mouse_x, mouse_y;
 		GetMousePoint(&mouse_x, &mouse_y);
-		//スタートボタン上でクリックすればプレイ状態に移行
-		if (util::CirclePointCollision(kStartX[kStageNum - 1], kStartY[kStageNum - 1], kStartRadius, mouse_x, mouse_y)) {
-			//ホバー時マウスの形を変える
-			SetCursor(LoadCursor(NULL, IDC_HAND));
-			//クリックで移行
-			if (input::CheckMouseLeftKey() == 1)
-				game_state_ = kPlay;
+		//マウスがスタートボタン上にないならswitch文終了
+		if (util::CirclePointCollision(kStartX[kStageNum - 1], kStartY[kStageNum - 1], kStartRadius, mouse_x, mouse_y) == false)
+			break;
+		//ホバー時マウスの形を変える
+		SetCursor(LoadCursor(NULL, IDC_HAND));
+		//クリックで移行
+		if (input::CheckMouseLeftKey() == 1) {
+			game_state_ = kPlay;
+			while (ShowCursor(false) >= 0);//カーソルを消す
 		}
 		break;
 	case kPlay://プレイ中
@@ -99,10 +101,9 @@ void GameScene::Update() {
 		if (col_road_.Update(px, py, player_.kPlayerRadius))
 			scene_changer_->ChangeScene(kSceneOver);
 
-		//ゴール到着
-		if (util::CirclePointCollision(kGoalX[kStageNum - 1], kGoalY[kStageNum - 1], kGoalRadius, px, py)) {
-			GoNextStage();//次のステージに進む
-		}
+		//ゴール到着時
+		if (util::CirclePointCollision(kGoalX[kStageNum - 1], kGoalY[kStageNum - 1], kGoalRadius, px, py))
+			GoNextStage();	//次のステージに進む
 		break;
 	}
 #ifdef _DEBUG
@@ -146,4 +147,7 @@ void GameScene::Finalize() {
 	map_.Finalize();
 	enemy_controller_.Finalize();
 	col_road_.Finalize();
+	//カーソルを戻す
+	while (ShowCursor(true) < 0);//カーソルカウントが0以上になるまでループさせる
+
 }

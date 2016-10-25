@@ -28,10 +28,11 @@ private:
 	static const int kGoalY[];
 	static const int kGoalRadius = 30;
 
-	const int kStageNum;//現在のステージ
-	int start_img_;		//スタート部分の画像ハンドル
-	int goal_img_;		//ゴール部分の画像ハンドル
-	GameState game_state_;//ゲームの状態
+	const int kStageNum;	//現在のステージ
+	int start_img_;			//スタート部分の画像ハンドル
+	int goal_img_;			//ゴール部分の画像ハンドル
+	GameState game_state_;	//ゲームの状態
+	HCURSOR cur_;			//以前のカーソルを保存
 
 	//各クラス
 	Map map_;
@@ -41,7 +42,7 @@ private:
 
 	void GoNextStage();		//次のステージに進みます
 public:
-	GameScene(ISceneChanger* changer,int stage_num);
+	GameScene(ISceneChanger* changer, int stage_num);
 	~GameScene();
 	void Initialize() override;    //初期化処理をオーバーライド。
 	void Finalize() override;      //終了処理をオーバーライド。
