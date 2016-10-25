@@ -19,7 +19,7 @@ void ClearScene::Initialize() {
 
 //更新
 void ClearScene::Update() {
-	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
+	if (input::CheckPushAnyButton()) { //何かボタンが押されていたら
 		scene_changer_->ChangeScene(kSceneStart);//シーンをメニューに変更
 	}
 }
@@ -27,11 +27,7 @@ void ClearScene::Update() {
 //描画
 void ClearScene::Draw()const {
 	DrawRotaGraph(320, 240, 1.0, 0, clear_image_, TRUE);   //画像の描画
-
-	DrawString(0, 0, "クリア画面です。", GetColor(255, 255, 255));
-	DrawString(0, 20, "Escキーを押すとスタート画面に戻ります。", GetColor(255, 255, 255));
-
-	DrawStringToHandle(200, 300, "Escでタイトルへ", GetColor(255, 255, 255), font_handle_01_);   //スタート画面案内
+	DrawStringToHandle(200, 300, "何かキーを押してください", GetColor(255, 255, 255), font_handle_01_);   //スタート画面案内
 }
 
 //終了処理

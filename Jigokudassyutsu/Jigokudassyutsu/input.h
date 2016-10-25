@@ -13,6 +13,8 @@ namespace input {
 	//マウスの入力状態を返す
 	extern int CheckMouseLeftKey();
 	extern int CheckMouseRightKey();
+	//呼び出されたフレームに何かキーかマウスクリックがあればtrueを返す
+	extern bool CheckPushAnyButton();
 }
 
 #endif

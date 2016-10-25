@@ -10,12 +10,14 @@ GameScene::GameScene(ISceneChanger* changer, int stage_num) :
 {
 }
 
-//スタート位置
-const int GameScene::kStartX[] = { 32,15,5,633,147 };
+//スタート位置,半径
+const int GameScene::kStartX[] = { 32,25,5,620,147 };
 const int GameScene::kStartY[] = { 455,454,436,426,397 };
-//ゴール位置
+const int GameScene::kStartRadius[] = { 30,30,30,10,30 };
+//ゴール位置,半径
 const int GameScene::kGoalX[] = { 633,32,637,7,640 };
 const int GameScene::kGoalY[] = { 324,13,37,440,0 };
+const int GameScene::kGoalRadius[] = { 30,30,30,30,30 };
 
 //デストラクタ
 GameScene::~GameScene() {
@@ -76,7 +78,7 @@ void GameScene::Update() {
 		int mouse_x, mouse_y;
 		GetMousePoint(&mouse_x, &mouse_y);
 		//マウスがスタートボタン上にないならswitch文終了
-		if (util::CirclePointCollision(kStartX[kStageNum - 1], kStartY[kStageNum - 1], kStartRadius, mouse_x, mouse_y) == false)
+		if (util::CirclePointCollision(kStartX[kStageNum - 1], kStartY[kStageNum - 1], kStartRadius[kStageNum - 1], mouse_x, mouse_y) == false)
 			break;
 		//ホバー時マウスの形を変える
 		SetCursor(LoadCursor(NULL, IDC_HAND));
@@ -102,7 +104,7 @@ void GameScene::Update() {
 			scene_changer_->ChangeScene(kSceneOver);
 
 		//ゴール到着時
-		if (util::CirclePointCollision(kGoalX[kStageNum - 1], kGoalY[kStageNum - 1], kGoalRadius, px, py))
+		if (util::CirclePointCollision(kGoalX[kStageNum - 1], kGoalY[kStageNum - 1], kGoalRadius[kStageNum - 1], px, py))
 			GoNextStage();	//次のステージに進む
 		break;
 	}
@@ -129,12 +131,6 @@ void GameScene::Draw()const {
 		col_road_.Draw();//道のあたり判定
 		break;
 	}
-
-#ifdef _DEBUG
-	std::string str = "ゲーム画面(ステージ" + std::to_string(kStageNum) + ")です。";
-	DrawString(0, 0, str.c_str(), GetColor(255, 255, 255));
-	DrawString(0, 20, "Escキーを押すと次のステージに進みます。", GetColor(255, 255, 255));
-#endif
 }
 
 //終了処理

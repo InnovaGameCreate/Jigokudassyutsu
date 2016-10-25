@@ -19,7 +19,7 @@ void StartScene::Initialize() {
 
 //更新
 void StartScene::Update() {
-	if (input::CheckStateKey(KEY_INPUT_RETURN) == 1) { //Enterキーが押されていたら
+	if (input::CheckPushAnyButton()) { //何かボタンが押されていたら
 		scene_changer_->ChangeScene(kSceneGame1);//シーンをメニューに変更
 	}
 }
@@ -27,7 +27,7 @@ void StartScene::Update() {
 //描画
 void StartScene::Draw()const {
 	DrawGraph(0, 0, handle01_, TRUE);  // 読みこんだグラフィックを画面左上に描画
-	DrawStringToHandle(230, 220, "Please push Enter", GetColor(255, 255, 255), font_handle1_);
+	DrawStringToHandle(230, 220, "何かキーを押してください", GetColor(255, 255, 255), font_handle1_);
 }
 
 //終了処理

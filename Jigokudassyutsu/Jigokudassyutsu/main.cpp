@@ -58,7 +58,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//fps
 		fps.Update();
 		fps.Wait();
-		fps.Draw(10, 50);
+		fps.Draw(10, 10);
 	}
 
 	//終了処理

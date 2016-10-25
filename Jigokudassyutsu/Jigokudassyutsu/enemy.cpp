@@ -53,7 +53,6 @@ void EnemyDokuro::Update(int player_x, int player_y, int cnt) {
 		tmp_rand_x = util::GetRandom(0, kWindowWidth);
 		tmp_rand_y = util::GetRandom(0, kWindowHeight);
 		is_compute_frame = false;
-		printf("%d,%d\n", tmp_rand_x, tmp_rand_y);
 	}
 	//一定時間で更新フラグを立てる
 	if (cnt % 300 == 0) {
