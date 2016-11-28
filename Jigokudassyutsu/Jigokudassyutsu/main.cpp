@@ -45,7 +45,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	FirstInit();		//ゲーム起動時に必要な初期化
 
 	SceneMgr scene_mgr;	//画面遷移クラス生成
+#ifdef _DEBUG
 	Fps fps(60);		//fps管理クラス作成(fps=60)
+#endif
 
 	//初期化
 	scene_mgr.Initialize();
@@ -56,9 +58,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		scene_mgr.Update();
 		scene_mgr.Draw();
 		//fps
+#ifdef _DEBUG
 		fps.Update();
 		fps.Wait();
 		fps.Draw(10, 10);
+#endif
 	}
 
 	//終了処理
