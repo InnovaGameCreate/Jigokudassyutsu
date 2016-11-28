@@ -19,19 +19,21 @@ void OverScene::Initialize() {
 
 //更新
 void OverScene::Update() {
-	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //Escキーが押されていたら
-		scene_changer_->ChangeScene(kSceneStart);//シーンをメニューに変更
+	if (input::CheckStateKey(KEY_INPUT_ESCAPE) == 1) { //ESCキーが押されていたら
+		scene_changer_->ChangeScene(kSceneStart);//シーンをスタート画面に変更
+		return;
 	}
-	if (input::CheckStateKey(KEY_INPUT_F1) == 1) { //F1キーが押されていたら
+	if (input::CheckPushAnyButton() == 1) { //何かキーが押されていたら
 		scene_changer_->ChangeScene(kSceneGame1);//シーンをステージ1に変更
+		return;
 	}
 }
 
 //描画
 void OverScene::Draw()const {
 	DrawGraph(0, 0, handle01_, TRUE);  // 読みこんだグラフィックを画面左上に描画
-	DrawStringToHandle(220, 370, "Escキーでメニューへ", GetColor(0, 0, 0), font_handle1_);
-	DrawStringToHandle(220, 410, "F1キーでステージ1へ", GetColor(0, 0, 0), font_handle1_);
+	DrawStringToHandle(220, 370, "何かキーを押してリトライしてください", GetColor(0, 0, 0), font_handle1_);
+	DrawStringToHandle(220, 410, "ESCキーでスタート画面に戻る", GetColor(0, 0, 0), font_handle1_);
 }
 
 //終了処理
